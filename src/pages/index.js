@@ -35,7 +35,7 @@ export const pageQuery = graphql`
 				node {
 					title
 					image {
-						sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+						sizes(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
 							...GatsbyContentfulSizes_withWebp
 						}
 					}

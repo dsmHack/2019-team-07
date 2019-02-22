@@ -3,6 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import Layout from "../layouts";
 import { graphql } from "gatsby";
+import HeroImage from "../components/hero-image";
 
 class RootIndex extends React.Component {
 	render() {
@@ -11,19 +12,15 @@ class RootIndex extends React.Component {
 
 		return (
 			<Layout>
-				<div style={{ background: "#fff" }}>
+				<div>
 					<Helmet title={`About Us - ${siteTitle}`} />
 					<div className="wrapper">
-						<h2 className="section-headline">About Us</h2>
-						<ul className="about-list">
-							{about.map(({ node }) => {
-								return (
-									<li key={node.id}>
-										{node.title}
-									</li>
-								);
-							})}
-						</ul>
+						{about.map(({ node }) => (
+							<div>
+								{/* <HeroImage imageSizes={node.photos.sizes} title={node.title} /> */}
+								<ul className="about-list" />
+							</div>
+						))}
 					</div>
 				</div>
 			</Layout>
@@ -38,22 +35,23 @@ export const pageQuery = graphql`
 		allContentfulAbout(sort: { fields: [title], order: ASC }) {
 			edges {
 				node {
-                    title
-                    chapterInformation{
-                        childMarkdownRemark{
-                            html
-                        }
-                    }
-                    about{
-                        childMarkdownRemark{
-                            html
-                        }
-                    }
-                    mission{
-                        childMarkdownRemark{
-                            html
-                        }
-                    }
+					title
+					chapterInformation {
+						childMarkdownRemark {
+							html
+						}
+					}
+					about {
+						childMarkdownRemark {
+							html
+						}
+					}
+					quote {
+						childMarkdownRemark {
+							html
+						}
+					}
+					quotePerson
 				}
 			}
 		}

@@ -3,11 +3,15 @@ import styles from "./mission.module.css";
 
 export default ({ mission }) => (
 	<div className={styles.mission}>
-		<h2 className={styles.missionTitle}>{mission.title}</h2>
-		<div
-			dangerouslySetInnerHTML={{
-				__html: mission.body.childMarkdownRemark.html
-			}}
-		/>
+		<div className={styles.missionTitle}>
+			<h2 className="section-headline">{mission.title}</h2>
+		</div>
+		<div className={styles.missionText}>
+			<div
+				dangerouslySetInnerHTML={{
+					__html: mission.body.childMarkdownRemark.html
+				}}
+			/>
+		</div>
 	</div>
 );
