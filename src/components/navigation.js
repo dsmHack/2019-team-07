@@ -25,12 +25,12 @@ export default () => (
 				<ul className={styles.navigationList}>
 					<li className={styles.navigationItemLogo}>
 						<Link to="/">
-							<img src="./logo.jpg" />
+							<img src="./logo.jpg" alt="" />
 						</Link>
 					</li>
 
 					{data.allContentfulMainNavigation.edges[0].node.navigationItems.map((item) => (
-						<li className={styles.navigationItem}>
+						<li className={styles.navigationItem} key={item.pageSlug}>
 							<Link
 								to={item.pageSlug || ""}
 								className={styles.navigationLink}
