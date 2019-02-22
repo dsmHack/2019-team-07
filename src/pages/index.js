@@ -2,8 +2,10 @@ import { graphql } from "gatsby";
 import get from "lodash/get";
 import React from "react";
 import Helmet from "react-helmet";
-import Mission from "../components/mission";
+
 import Feature from "../components/feature";
+import Hero from "../components/hero";
+import Mission from "../components/mission";
 import Layout from "../layouts";
 
 class RootIndex extends React.Component {
@@ -11,11 +13,13 @@ class RootIndex extends React.Component {
 		const siteTitle = get(this, "props.data.site.siteMetadata.title");
 		const features = get(this, "props.data.allContentfulFeature.edges");
 		const mission = get(this, "props.data.allContentfulMissionStatement.edges");
+		const page = get(this, "props.data.allContentfulBasicPage.edges");
 
 		return (
 			<Layout>
 				<div>
 					<Helmet title={siteTitle} />
+					<Hero data={page[0].node} />
 					<Mission mission={mission[0].node} />
 					<div className="wrapper">
 						<div className="row">{features.map(({ node }) => <Feature feature={node} />)}</div>
@@ -56,6 +60,24 @@ export const pageQuery = graphql`
 					body {
 						childMarkdownRemark {
 							html
+						}
+					}
+				}
+			}
+		}
+		allContentfulBasicPage(filter: { contentful_id: { eq: "7xXpIF01hW7xFEyGqa5SI2" } }) {
+			edges {
+				node {
+					title
+					heroImage {
+						title
+						fluid(maxWidth: 1200) {
+							sizes
+							src
+							srcSet
+						}
+						sizes(resizingBehavior: SCALE) {
+							...GatsbyContentfulSizes_withWebp
 						}
 					}
 				}
