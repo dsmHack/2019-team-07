@@ -8,7 +8,10 @@
   overflow: hidden;
 }
 
-.heroImage > div {
-  padding-bottom: 100% !important;
+.heroPrimarySection {
+  z-index: 0;
 }
 
+.heroSecondarySection {
+  z-index: 1;
+}

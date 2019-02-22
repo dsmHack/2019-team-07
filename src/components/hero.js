@@ -18,15 +18,19 @@ export default ({ data }) => {
 
   return (
     <div className={styles.hero}>
-      <HexGrid data={secondaryImagesFirst} />
-      <div className={styles.heroMainSection}>
+      <div className={styles.heroSecondarySection}>
+        <HexGrid data={secondaryImagesFirst} />
+      </div>
+      <div className={styles.heroPrimarySection}>
         <Img
           className={styles.heroImage}
           alt={data.name}
           fluid={data.heroImage.fluid}
         />
       </div>
-      <HexGrid data={secondaryImagesSecond} />
+      <div className={styles.heroSecondarySection}>
+        <HexGrid data={secondaryImagesFirst} />
+      </div>
     </div>
   );
 };
