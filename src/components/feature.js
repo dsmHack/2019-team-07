@@ -7,12 +7,13 @@ export default ({ feature }) => (
 	<div className={styles.featureWrapper}>
 		<div className={styles.feature}>
 			<Img sizes={feature.image.sizes} />
-			<p
-				style={{ flex: 1 }}
-				dangerouslySetInnerHTML={{
-					__html: feature.description.childMarkdownRemark.html
-				}}
-			/>
+			<div style={{ flex: 1 }}>
+				<div
+					dangerouslySetInnerHTML={{
+						__html: feature.description.childMarkdownRemark.html
+					}}
+				/>
+			</div>
 			<LinkButton to={feature.callToActionUrl} value={feature.callToActionText} block />
 		</div>
 	</div>
