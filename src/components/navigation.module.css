@@ -36,10 +36,11 @@ nav {
 }
 
 .navigationItem a {
-	color: currentColor;
+	color: #556;
 	text-decoration: none;
 	display: flex;
 	align-items: center;
+	font-size: 0.9em;
 }
 
 .navigationItem a:hover,
@@ -61,7 +62,7 @@ nav {
 	padding: 1em 2em;
 	background-color: #0055a4;
 	color: #fff;
-	font-size: 1em;
+	font-size: 0.9em;
 	cursor: pointer;
 	font-weight: bold;
 }

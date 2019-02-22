@@ -21,11 +21,11 @@ class RootIndex extends React.Component {
 				<div>
 					<Helmet title={`News and Events - ${siteTitle}`} />
 					<div className="events-wrapper">
-						<h2>Latest Event</h2>
+						<h2 className="section-headline">Latest Event</h2>
 						{events.map(({ node }) => (
-							<div className="row" style={{ alignItem: "flex-start" }}>
+							<div className="row">
 								<div className={styles.eventData}>
-									<h3 className={styles.eventName}>{node.eventName}</h3>
+									<h3 className={styles.title}>{node.eventName}</h3>
 									<div className={styles.meta}>
 										<div className={styles.metaItem}>
 											<Calendar /> {new Date(node.dateTime).toLocaleDateString("en-us")}
@@ -47,11 +47,21 @@ class RootIndex extends React.Component {
 					</div>
 					<div className="news-wrapper">
 						<h2 className="section-headline">News</h2>
-						<ul className="news-list">
-							{news.map(({ node }) => {
-								return <li key={node.id}>{node.title}</li>;
-							})}
-						</ul>
+						<div className="row">
+							{news.map(({ node }) => (
+								<article key={node.id} className={styles.article}>
+									<h3 className={styles.title}>{node.title}</h3>
+									<div className={styles.meta}>
+										{node.date && (
+											<div className={styles.metaItem}>
+												<Calendar /> {new Date(node.date).toLocaleDateString("en-us")}
+											</div>
+										)}
+									</div>
+									<p>{node.teaserText}</p>
+								</article>
+							))}
+						</div>
 					</div>
 				</div>
 			</Layout>
@@ -67,6 +77,8 @@ export const pageQuery = graphql`
 			edges {
 				node {
 					title
+					teaserText
+					date
 				}
 			}
 		}
