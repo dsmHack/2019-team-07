@@ -3,6 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import Layout from "../layouts";
 import { graphql } from "gatsby";
+import styles from "./membership.module.css";
 
 class RootIndex extends React.Component {
 	render() {
@@ -11,15 +12,18 @@ class RootIndex extends React.Component {
 
 		return (
 			<Layout>
-				<div style={{ background: "#fff" }}>
-					<Helmet title={`Members - ${siteTitle}`} />
+				<div>
+					<Helmet title={`Membership - ${siteTitle}`} />
 					<div className="wrapper">
-						<h2 className="section-headline">Members</h2>
-						<ul className="member-list">
+						<h2 className="section-headline text-centered">Meet our Members</h2>
+						<ul className={styles.memberList}>
 							{members.map(({ node }) => {
 								return (
 									<li key={node.id}>
-										{node.name} - {node.title}
+										<strong>{node.name}</strong>
+										<div>
+											{node.company} - {node.title}
+										</div>
 									</li>
 								);
 							})}

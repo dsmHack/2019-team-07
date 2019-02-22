@@ -1,0 +1,15 @@
+.memberList {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.memberList li {
+	width: 50%;
+	margin-bottom: 1em;
+}
+
+.memberList strong {
+	font-size: 1.15em;
+}
