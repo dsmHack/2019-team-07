@@ -34,7 +34,7 @@ class RootIndex extends React.Component {
 export default RootIndex;
 
 export const pageQuery = graphql`
-	query MembersQuery {
+	query MembershipQuery {
 		allContentfulMember(sort: { fields: [name], order: ASC }) {
 			edges {
 				node {
