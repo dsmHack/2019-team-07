@@ -53,9 +53,10 @@ a {
  *
  */
 .section-headline {
-	padding: 0 0 0.4em 0;
-	margin: 0 0 5vmin 0;
-	border-bottom: 1px solid #ddd;
+	font-size: 2em;
+	color: #0055a4;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 /**
@@ -76,4 +77,8 @@ a {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+
+.row-center {
+	align-items: center;
 }

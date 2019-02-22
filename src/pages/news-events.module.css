@@ -1,0 +1,51 @@
+.title {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	margin-top: 0;
+}
+
+.meta {
+	display: flex;
+}
+
+.metaItem {
+	display: flex;
+	align-items: center;
+	background-color: #eeeef2;
+	border-radius: 0.25em;
+	color: #667;
+	width: fit-content;
+	padding: 0.25em 0.5em;
+	margin-right: 1em;
+	margin-bottom: 0.5em;
+}
+
+.metaItem svg {
+	margin-right: 0.5em;
+	stroke: #aab;
+}
+
+.eventData {
+	flex: 1;
+	align-self: flex-start;
+}
+
+.eventImage {
+	flex: 1;
+}
+
+.article {
+	width: 100%;
+}
+
+@media all and (min-width: 600px) {
+	.article {
+		width: 45%;
+	}
+}
+
+@media all and (min-width: 900px) {
+	.article {
+		width: 30%;
+	}
+}
