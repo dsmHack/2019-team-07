@@ -1,14 +1,15 @@
-import React from 'react'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
-import Hero from '../components/hero'
-import ArticlePreview from '../components/article-preview'
+import get from 'lodash/get';
+import React from 'react';
+import Helmet from 'react-helmet';
+
+import ArticlePreview from '../components/article-preview';
+import Hero from '../components/hero';
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    const [author] = get(this, 'props.data.allContentfulPerson.edges')
+    const [author] = get(this, 'props.data.allContentfulMember.edges')
 
     return (
       <div style={{ background: '#fff' }}>
@@ -55,7 +56,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPerson(filter: { id: { eq: "c15jwOBqpxqSAOy2eOO4S0m" } }) {
+    allContentfulMember(filter: { id: { eq: "c15jwOBqpxqSAOy2eOO4S0m" } }) {
       edges {
         node {
           name
