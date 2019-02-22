@@ -7,7 +7,7 @@ export default ({ photos, title }) => (
 	<div className={styles.hero}>
 		<div className={styles.photos}>
 			{photos.map((photo) => (
-				<div>
+				<div key={photo}>
 					<Img className={styles.heroImage} sizes={photo.sizes} />
 				</div>
 			))}

@@ -18,7 +18,7 @@ class RootIndex extends React.Component {
 					<Helmet title={`About Us - ${siteTitle}`} />
 					<div className="wrapper">
 						{about.map(({ node }) => (
-							<div>
+							<div key={node.id}>
 								<HeroImage photos={node.photos} title={node.title} />
 								<div className="row" style={{ marginBottom: "4em" }}>
 									<div className="col text-centered">
@@ -64,6 +64,7 @@ export const pageQuery = graphql`
 		allContentfulAbout(sort: { fields: [title], order: ASC }) {
 			edges {
 				node {
+					id
 					title
 					chapterInformation {
 						childMarkdownRemark {
