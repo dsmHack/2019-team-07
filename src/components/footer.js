@@ -7,8 +7,7 @@ export default () => (
 		<div className="wrapper">
 			<div className="row row-center">
 				<div>
-					<p>Les Dames d'Escossier | Greater Des Moines Chapter</p>
-					<p>&copy; {new Date().getFullYear()}</p>
+					&copy; {new Date().getFullYear()} - Les Dames d'Escossier International · Greater Des Moines Chapter
 				</div>
 				<div className="row">
 					<a href="https://www.facebook.com/damesdsm/" aria-label="Dames DSM Facebook">
