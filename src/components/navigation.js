@@ -30,7 +30,7 @@ export default () => (
 
 					{data.allContentfulMainNavigation.edges[0].node.navigationItems.map((item) => (
 						<li className={styles.navigationItem}>
-							<Link to={item.pageSlug}>{item.navigationText}</Link>
+							<Link to={item.pageSlug || ""}>{item.navigationText}</Link>
 						</li>
 					))}
 					<li className={styles.navigationItem}>

@@ -76,5 +76,8 @@ a {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+
+.row-center {
 	align-items: center;
 }
