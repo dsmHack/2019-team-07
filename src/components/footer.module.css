@@ -1,5 +1,28 @@
 .footer {
 	background-color: #2b2b2b;
 	color: #fbfbff;
-	padding: 2em 0;
+	padding: 1.5em 0;
+}
+
+.footer a {
+	color: #fbfbff;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: 0.25em;
+	height: 2em;
+	width: 2em;
+	padding: 0.25em;
+	margin: 0 0.5em;
+}
+
+.footer a:hover,
+.footer a:focus {
+	border-color: #fbfbff;
+}
+
+.footer a:active {
+	background-color: rgba(221, 221, 255, 0.15);
 }

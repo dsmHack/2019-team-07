@@ -18,6 +18,7 @@
     "lodash": "^4.17.10",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-feather": "^1.1.6",
     "react-helmet": "^5.2.0"
   },
   "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
