@@ -3,8 +3,9 @@ import React from 'react';
 import styles from './hex-grid.module.css';
 
 export default ({ data }) => (
-  <ul className={styles.hexGrid}>
-    {data.map((item, index) => 
+  <div className={styles.hexContainer}>
+    <ul className={styles.hexGrid}>
+      {data.map((item, index) => (
         <li className={styles.hex} key={item.contentful_id}>
           <div className={styles.hexIn}>
             <a className={styles.hexLink} href="#">
@@ -12,6 +13,7 @@ export default ({ data }) => (
             </a>
           </div>
         </li>
-    )}
-  </ul>
+      ))}
+    </ul>
+  </div>
 );

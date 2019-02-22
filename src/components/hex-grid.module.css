@@ -9,9 +9,10 @@ ul.hexGrid {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(6, 1fr);
-  margin: 0;
+  margin: -20px;
   list-style-type: none;
-  overflow: hidden;
+  overflow-x: visible;
+  overflow-y: hidden;
 }
 
 .hex {
