@@ -1,0 +1,26 @@
+.featureWrapper {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.feature {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.feature a {
+	justify-self: baseline;
+}
+
+@media all and (min-width: 600px) {
+	.featureWrapper {
+		width: 45%;
+	}
+}
+
+@media all and (min-width: 900px) {
+	.featureWrapper {
+		width: 30%;
+	}
+}
