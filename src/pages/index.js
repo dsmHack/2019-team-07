@@ -1,10 +1,9 @@
-import React from "react";
+import { graphql } from "gatsby";
 import get from "lodash/get";
+import React from "react";
 import Helmet from "react-helmet";
-import Hero from "../components/hero";
 import ArticlePreview from "../components/article-preview";
 import Layout from "../layouts";
-import { graphql } from "gatsby";
 
 class RootIndex extends React.Component {
 	render() {
