@@ -3,8 +3,9 @@
   position: relative;
   display: grid;
   grid-gap: 0;
-  grid-template-columns: 1fr 3fr 1fr;
-  max-height: var(--hero-height);
+  grid-template-columns: 1fr 50vw 1fr;
+  max-height: calc(50vw * 0.75);
+  height: calc(50vw * 0.75);
   overflow: hidden;
 }
 
@@ -14,4 +15,5 @@
 
 .heroSecondarySection {
   z-index: 1;
+  margin-top: -12%;
 }
