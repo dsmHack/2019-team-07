@@ -1,0 +1,13 @@
+.mission {
+	text-align: center;
+	padding: 2.5em 4em;
+	background-color: #0055a4;
+	color: #fbfbff;
+	background-image: radial-gradient(circle farthest-side at center bottom, #0096cd, #0055a4 125%);
+}
+
+.missionTitle {
+	font-size: 1.25em;
+	text-transform: uppercase;
+	font-weight: bold;
+}

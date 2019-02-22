@@ -2,21 +2,21 @@ import { graphql } from "gatsby";
 import get from "lodash/get";
 import React from "react";
 import Helmet from "react-helmet";
-import ArticlePreview from "../components/article-preview";
-import Layout from "../layouts";
-import Img from "gatsby-image";
+import Mission from "../components/mission";
 import Feature from "../components/feature";
+import Layout from "../layouts";
 
 class RootIndex extends React.Component {
 	render() {
 		const siteTitle = get(this, "props.data.site.siteMetadata.title");
 		const features = get(this, "props.data.allContentfulFeature.edges");
+		const mission = get(this, "props.data.allContentfulMissionStatement.edges");
 
 		return (
 			<Layout>
 				<div>
 					<Helmet title={siteTitle} />
-					{/* <Hero data={author.node} /> */}
+					<Mission mission={mission[0].node} />
 					<div className="wrapper">
 						<div className="row">{features.map(({ node }) => <Feature feature={node} />)}</div>
 					</div>
@@ -46,6 +46,18 @@ export const pageQuery = graphql`
 					}
 					callToActionText
 					callToActionUrl
+				}
+			}
+		}
+		allContentfulMissionStatement {
+			edges {
+				node {
+					title
+					body {
+						childMarkdownRemark {
+							html
+						}
+					}
 				}
 			}
 		}
