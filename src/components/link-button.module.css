@@ -14,6 +14,7 @@
 .button:hover,
 .button:focus {
 	background-color: #00ace8;
+	text-decoration: none;
 }
 
 .button:active {
