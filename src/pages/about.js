@@ -72,7 +72,7 @@ export const pageQuery = graphql`
 						}
 					}
 					photos {
-						sizes(maxWidth: 1200, maxHeight: 350, resizingBehavior: SCALE) {
+						sizes(maxWidth: 400, maxHeight: 300, resizingBehavior: FILL) {
 							...GatsbyContentfulSizes_withWebp
 						}
 					}
