@@ -3,9 +3,15 @@ import Img from "gatsby-image";
 
 import styles from "./hero-image.module.css";
 
-export default ({ imageSizes, title }) => (
+export default ({ photos, title }) => (
 	<div className={styles.hero}>
-		<Img className={styles.heroImage} sizes={imageSizes} />
+		<div className={styles.photos}>
+			{photos.map((photo) => (
+				<div key={photo}>
+					<Img className={styles.heroImage} sizes={photo.sizes} />
+				</div>
+			))}
+		</div>
 		<div className={styles.heroText}>
 			<h1 className={styles.heroTitle}>{title}</h1>
 		</div>

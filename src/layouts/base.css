@@ -57,6 +57,7 @@ a {
 	color: #0055a4;
 	text-transform: uppercase;
 	font-weight: bold;
+	margin-top: 0;
 }
 
 /**
@@ -81,4 +82,16 @@ a {
 
 .row-center {
 	align-items: center;
+}
+
+.col {
+	flex: 1;
+}
+
+.col:not(:last-child) {
+	margin-right: 2em;
+}
+
+.text-centered {
+	text-align: center;
 }
