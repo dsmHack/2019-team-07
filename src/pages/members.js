@@ -1,6 +1,8 @@
 import get from "lodash/get";
 import React from "react";
 import Helmet from "react-helmet";
+import Layout from "../layouts";
+import { graphql } from "gatsby";
 
 class RootIndex extends React.Component {
 	render() {
@@ -8,21 +10,23 @@ class RootIndex extends React.Component {
 		const members = get(this, "props.data.allContentfulMember.edges");
 
 		return (
-			<div style={{ background: "#fff" }}>
-				<Helmet title={`Members - ${siteTitle}`} />
-				<div className="wrapper">
-					<h2 className="section-headline">Members</h2>
-					<ul className="member-list">
-						{members.map(({ node }) => {
-							return (
-								<li key={node.id}>
-									{node.name} - {node.title}
-								</li>
-							);
-						})}
-					</ul>
+			<Layout>
+				<div style={{ background: "#fff" }}>
+					<Helmet title={`Members - ${siteTitle}`} />
+					<div className="wrapper">
+						<h2 className="section-headline">Members</h2>
+						<ul className="member-list">
+							{members.map(({ node }) => {
+								return (
+									<li key={node.id}>
+										{node.name} - {node.title}
+									</li>
+								);
+							})}
+						</ul>
+					</div>
 				</div>
-			</div>
+			</Layout>
 		);
 	}
 }
