@@ -39,7 +39,7 @@ class RootIndex extends React.Component {
 										<img src="https://via.placeholder.com/600x600" />
 									</div>
 									<div className="col text-centered">
-										<h2 className="section-headline">About Les Dames</h2>
+										<h2 className="section-headline text-center">About Les Dames</h2>
 										<div
 											dangerouslySetInnerHTML={{
 												__html: node.about.childMarkdownRemark.html
