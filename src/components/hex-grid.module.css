@@ -6,13 +6,13 @@ ul.hexGrid {
 }
 
 .hexGrid {
+  box-sizing: border-box;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 5px;
   grid-template-columns: repeat(6, 1fr);
-  margin: -20px;
+  margin: calc((-100% / 6) - 14px);
   list-style-type: none;
-  overflow-x: visible;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .hex {
