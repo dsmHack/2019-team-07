@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import get from "lodash/get";
 import React from "react";
 import Helmet from "react-helmet";
-
+import HrefButton from "../components/href-button";
 import Container from "../components/container";
 import Feature from "../components/feature";
 import Hero from "../components/hero";
@@ -25,6 +25,19 @@ class RootIndex extends React.Component {
 						<Mission mission={mission[0].node} />
 						<div className="wrapper">
 							<div className="row">{features.map(({ node }) => <Feature feature={node} />)}</div>
+						</div>
+						<div style={{ margin: "2em" }}>
+							<h2 className="section-headline text-centered">{page[0].node.donateHeader}</h2>
+							<div className="lead">
+								<div
+									dangerouslySetInnerHTML={{
+										__html: page[0].node.donateBody.childMarkdownRemark.html
+									}}
+								/>
+							</div>
+							<div className="text-centered">
+								<HrefButton href={page[0].node.donateUrl} value="Donate" ghost />
+							</div>
 						</div>
 					</div>
 				</Container>

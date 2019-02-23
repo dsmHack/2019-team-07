@@ -1,5 +1,6 @@
 .button,
-.ghost {
+.ghost,
+.ghostGreen {
 	outline: 0;
 	border: none;
 	border-radius: 0.5em;
@@ -27,9 +28,14 @@
 	text-align: center;
 }
 
-.ghost {
+.ghost,
+.ghostGreen {
 	border: 2px solid;
 	background: transparent;
 	color: #0055a4;
 	padding: 0.65em 1em;
+}
+
+.ghostGreen {
+	color: #20bf55;
 }
