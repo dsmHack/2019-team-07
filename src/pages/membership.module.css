@@ -31,3 +31,8 @@
 .extra svg {
 	margin-right: 0.5em;
 }
+
+.criteria {
+	max-width: 900px;
+	margin: 0 auto;
+}

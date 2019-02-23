@@ -15,7 +15,7 @@ class RootIndex extends React.Component {
 		return (
 			<Layout>
 				<div>
-					<Helmet title={`Grants & Scholarship - ${siteTitle}`} />
+					<Helmet title={`Giving - ${siteTitle}`} />
 					{giving.map(({ node }) => (
 						<div>
 							<HeroImage photos={node.photos} title={node.title} />
