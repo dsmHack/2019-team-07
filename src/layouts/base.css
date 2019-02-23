@@ -113,3 +113,7 @@ a {
   text-align: center;
 }
 
+.lead-no-margin {
+  margin: 0;
+  max-width: unset;
+}
