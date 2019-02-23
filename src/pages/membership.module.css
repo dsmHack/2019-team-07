@@ -6,8 +6,14 @@
 }
 
 .memberList li {
-	width: 50%;
 	margin-bottom: 1em;
+	width: 100%;
+}
+
+@media all and (min-width: 700px) {
+	.memberList li {
+		width: 50%;
+	}
 }
 
 .memberList strong {

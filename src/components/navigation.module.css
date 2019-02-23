@@ -33,6 +33,13 @@ nav {
 
 .navigationItem {
 	margin: 0 1em;
+	display: none;
+}
+
+@media all and (min-width: 960px) {
+	.navigationItem {
+		display: block;
+	}
 }
 
 .navigationItemLogo {
@@ -65,4 +72,48 @@ nav {
 .navigationLinkActive {
 	color: #0055a4;
 	border-color: #0055a4;
+}
+
+.menu {
+	display: block;
+	margin: 1em;
+}
+
+.dropdownMenu {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: #0055a4;
+	list-style: none;
+}
+
+.dropdownMenu a,
+.dropdownMenu a:hover,
+.dropdownMneu a:focus {
+	color: #fbfbff;
+	display: block;
+	text-align: left;
+	padding: 0.75em 1em;
+	max-width: 100%;
+	border: none;
+	text-decoration: none;
+}
+
+.dropdownMenu a:hover,
+.dropdownMneu a:focus {
+	background-color: #00ace8;
+}
+
+.dropdownActive {
+	background-color: #004494;
+}
+
+@media all and (min-width: 960px) {
+	.menu,
+	.dropdownMenu {
+		display: none;
+	}
 }

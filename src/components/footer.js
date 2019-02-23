@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter } from "react-feather";
 
 export default () => (
 	<div className={styles.footer}>
-		<div className="wrapper">
+		<div className="container">
 			<div className="row row-center">
 				<div>
 					&copy; {new Date().getFullYear()} - Les Dames d'Escossier International · Greater Des Moines Chapter

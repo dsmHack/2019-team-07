@@ -4,6 +4,16 @@
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 14px;
+}
+
+@media all and (min-width: 600px) {
+	html {
+		font-size: 16px;
+	}
+}
+
 body {
 	font-family: "Lato", sans-serif;
 	font-size: 1em;
@@ -22,7 +32,7 @@ img {
 h1,
 h2,
 h3 {
-	font-size: 2em;
+	font-size: 2rem;
 	font-weight: normal;
 	font-family: "Open Sans", sans-serif;
 }
@@ -31,10 +41,10 @@ a {
 	color: #0055a4;
 }
 
-.wrapper {
+.container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 5vmin 0;
+	padding: 0 1rem;
 }
 
 /**
@@ -53,7 +63,7 @@ a {
  *
  */
 .section-headline {
-	font-size: 2em;
+	font-size: 2rem;
 	color: #0055a4;
 	font-weight: bold;
 	margin-top: 0;
@@ -96,7 +106,8 @@ a {
 }
 
 .lead {
-	font-size: 1.5em;
+	font-size: 1.5rem;
+	line-height: 1.25;
 	font-weight: 300;
 	max-width: 900px;
 	margin: 2em auto;
