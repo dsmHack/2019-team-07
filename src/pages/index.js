@@ -35,7 +35,7 @@ class RootIndex extends React.Component {
 									}}
 								/>
 							</div>
-							<div className="text-centered">
+							<div className="text-centered donate-button">
 								<HrefButton href={page[0].node.donateUrl} value="Donate" ghost />
 							</div>
 						</div>

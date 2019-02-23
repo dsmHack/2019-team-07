@@ -42,7 +42,7 @@ class RootIndex extends React.Component {
                     <img className={styles.portrait} src={node.aboutPortraitPhotos[1].sizes.src} alt="" />
                     <img className={styles.landscape} src={node.aboutLandscapePhotos[1].sizes.src} alt="" />
                   </div>
-                  <div className={`{col ${styles.col} text-centered`}>
+                  <div className={`col ${styles.col} text-centered`}>
                     <h2 className="section-headline text-center">
                       About Les Dames
                     </h2>

@@ -1,6 +1,8 @@
 import React from "react";
 // eslint-disable-next-line
 import base from "./base.css";
+// eslint-disable-next-line
+import home from "./homePage.css";
 import Footer from "../components/footer";
 import Navigation from "../components/navigation";
 
