@@ -1,29 +1,21 @@
-import React from "react";
 import { navigate } from "gatsby";
-import Layout from "../layouts";
+import React, { useContext } from "react";
+import { AuthContext } from "../components/auth.js";
 import Button from "../components/button";
-import { handleLogin, initAuth } from "../components/auth.js";
+import Layout from "../layouts";
 
-class Login extends React.Component {
-	componentDidMount() {
-		initAuth();
-	}
+export default () => {
+	const context = useContext(AuthContext);
 
-	handleSubmit() {
-		return handleLogin((user) => navigate(`/app/profile`));
-	}
+	const handleSubmit = () => context.login(() => navigate("members"));
 
-	render() {
-		return (
-			<Layout>
-				<div style={{ textAlign: "center", margin: "7.5em 0" }}>
-					<h1 class="section-headline">Log in</h1>
-					<p>To read secure content, please log in below.</p>
-					<Button onClick={this.handleSubmit} value="Log in" />
-				</div>
-			</Layout>
-		);
-	}
-}
-
-export default Login;
+	return (
+		<Layout>
+			<div style={{ textAlign: "center", margin: "7.5em 0" }}>
+				<h1 class="section-headline">Log in</h1>
+				<p>To read secure content, please log in below.</p>
+				<Button onClick={handleSubmit} value="Log in" />
+			</div>
+		</Layout>
+	);
+};

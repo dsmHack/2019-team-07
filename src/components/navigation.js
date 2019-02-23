@@ -1,13 +1,11 @@
 import { graphql, navigate, StaticQuery } from "gatsby";
 import Link from "gatsby-link";
-import React, { useEffect, useState } from "react";
-import { handleLogin, initAuth, isLoggedIn } from "./auth";
+import React, { useContext, useState, useEffect } from "react";
+import { Menu } from "react-feather";
+import { AuthContext } from "./auth";
 import Button from "./button";
 import LinkButton from "./link-button";
 import styles from "./navigation.module.css";
-import { Menu } from "react-feather";
-
-const handleSubmit = () => handleLogin(() => navigate(`/members/`));
 
 export default () => {
 	const [ show, setShow ] = useState(false);
@@ -23,9 +21,9 @@ export default () => {
 		document.body.addEventListener("click", close);
 	};
 
-	useEffect(() => {
-		initAuth();
-	}, []);
+	const context = useContext(AuthContext);
+	console.log(context);
+	const handleSubmit = () => context.login(() => navigate(`/members/`));
 
 	return (
 		<StaticQuery
@@ -74,7 +72,7 @@ export default () => {
 						))}
 						<li className={styles.navigationItem}>
 							<span style={{ fontSize: "0.9em" }}>
-								{isLoggedIn() ? (
+								{context.isLoggedIn ? (
 									<LinkButton to={"members/"} value="Members" />
 								) : (
 									<Button onClick={handleSubmit} value="Login" />
@@ -98,7 +96,7 @@ export default () => {
 								</li>
 							))}
 							<li>
-								{isLoggedIn() ? (
+								{context.isLoggedIn ? (
 									<Link to={"members/"}>Members</Link>
 								) : (
 									<a onClick={handleSubmit}>Login</a>

@@ -1,18 +1,18 @@
 import get from "lodash/get";
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import Helmet from "react-helmet";
+import { AuthContext } from "../components/auth";
 import Layout from "../layouts";
-import { graphql, navigate } from "gatsby";
-import { isLoggedIn } from "../components/auth";
+import { navigate } from "gatsby";
+import Button from "../components/button";
 
 export default () => {
 	const siteTitle = get(this, "props.data.site.siteMetadata.title");
 
-	useEffect(() => {
-		if (!isLoggedIn()) {
-			navigate("/login/");
-		}
-	}, []);
+	const context = useContext(AuthContext);
+	if (!context.isLoggedIn) {
+		navigate("/login/");
+	}
 
 	return (
 		<Layout>
@@ -21,6 +21,7 @@ export default () => {
 				<div className="wrapper">
 					<h2 className="section-headline">Members Only</h2>
 				</div>
+				<Button onClick={() => context.logout(() => navigate("/"))} value="Log out" />
 			</div>
 		</Layout>
 	);
