@@ -9,9 +9,17 @@ ul.hexGrid {
   box-sizing: border-box;
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(6, 1fr);
   margin: calc((-100% / 6) - 14px);
   list-style-type: none;
   overflow: hidden;
-  padding-bottom: 7.4%;
+  grid-template-columns: repeat(8, 1fr);
+  padding-bottom: 5.5%;
+}
+
+@media (max-width: 900px) {
+  .hexGrid {
+    grid-template-columns: repeat(6, 1fr);
+
+    padding-bottom: 7.4%;
+  }
 }
