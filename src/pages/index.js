@@ -14,7 +14,7 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, "props.data.site.siteMetadata.title");
     const features = get(this, "props.data.allContentfulFeature.edges");
     const mission = get(this, "props.data.allContentfulMissionStatement.edges");
-    const page = get(this, "props.data.allContentfulBasicPage.edges");
+    const page = get(this, "props.data.allContentfulHomePage.edges");
 
     return (
       <HomePageLayout>
