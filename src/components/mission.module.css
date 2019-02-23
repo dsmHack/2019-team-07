@@ -1,18 +1,24 @@
 .mission {
-	text-align: center;
-	padding: 2.5em 4em;
+  text-align: center;
+  padding: 2.5em 4em;
 }
 
 .missionTitle {
-	max-width: 600px;
-	margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .missionTitle h2 {
-	line-height: 1.25;
+  line-height: 1.25;
 }
 
 .missionText {
-	font-size: 1.5em;
-	font-weight: 300;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+@media (max-width: 900px) {
+  .mission {
+    padding: 2.5em 2em;
+  }
 }

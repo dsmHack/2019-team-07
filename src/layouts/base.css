@@ -68,6 +68,10 @@ a {
   margin-top: 0;
 }
 
+.section-headline.top-margin {
+  margin-top: 2em;
+}
+
 /**
  *
  */
@@ -113,3 +117,7 @@ a {
   text-align: center;
 }
 
+.lead-no-margin {
+  margin: 0;
+  max-width: unset;
+}

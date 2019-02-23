@@ -37,7 +37,7 @@ export default ({ data }) => {
 					</div>
 				))}
 				<div className="wrapper">
-					<h2 className="section-headline text-centered">Meet our Members</h2>
+					<h2 className="section-headline top-margin text-centered">Meet our Members</h2>
 					<ul className={styles.memberList}>
 						{members.map(({ node }) => {
 							return (

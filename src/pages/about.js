@@ -29,7 +29,7 @@ class RootIndex extends React.Component {
                         __html: node.chapterInformation.childMarkdownRemark.html
                       }}
                     />
-					<LinkButton to="news-events" value="Join our community" />
+					<LinkButton to={node.communityUrl} value="Join our community" />
                   </div>
                   <div className={`col ${styles.col}`}>
                     <img src={node.chapterImage.sizes.src} alt="" />
@@ -42,7 +42,7 @@ class RootIndex extends React.Component {
                     <img className={styles.portrait} src={node.aboutPortraitPhotos[1].sizes.src} alt="" />
                     <img className={styles.landscape} src={node.aboutLandscapePhotos[1].sizes.src} alt="" />
                   </div>
-                  <div className={`{col ${styles.col} text-centered`}>
+                  <div className={`col ${styles.col} text-centered`}>
                     <h2 className="section-headline text-center">
                       About Les Dames
                     </h2>
@@ -76,7 +76,8 @@ export const pageQuery = graphql`
             childMarkdownRemark {
               html
             }
-          }
+		  }
+		  communityUrl
           chapterImage {
             sizes(maxWidth: 600, maxHeight: 350, resizingBehavior: FILL) {
               ...GatsbyContentfulSizes_withWebp
