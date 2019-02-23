@@ -3,6 +3,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import Layout from "../layouts";
 import { graphql } from "gatsby";
+import HeroImage from "../components/hero-image";
 
 class RootIndex extends React.Component {
 	render() {
@@ -11,20 +12,20 @@ class RootIndex extends React.Component {
 
 		return (
 			<Layout>
-				<div style={{ background: "#fff" }}>
+				<div>
 					<Helmet title={`Contact Us - ${siteTitle}`} />
-					<div className="wrapper">
-						<h2 className="section-headline">Contact Us</h2>
-						<ul className="Contact-list">
-							{contact.map(({ node }) => {
-								return (
-									<li key={node.id}>
-										{node.title}
-									</li>
-								);
-							})}
-						</ul>
-					</div>
+					{contact.map(({ node }) => (
+						<div>
+							<HeroImage photos={node.photos} title={node.title} />
+							<div className="lead">
+								<div
+									dangerouslySetInnerHTML={{
+										__html: node.body.childMarkdownRemark.html
+									}}
+								/>
+							</div>
+						</div>
+					))}
 				</div>
 			</Layout>
 		);
@@ -35,18 +36,20 @@ export default RootIndex;
 
 export const pageQuery = graphql`
 	query ContactQuery {
-		allContentfulContactUs(sort: { fields: [title], order: ASC }) {
+		allContentfulContactUs {
 			edges {
 				node {
-                    title
-                    description
-                    name
-                    phoneNumber
-                    email
-                    address
-                    city
-                    state
-                    zip
+					title
+					body {
+						childMarkdownRemark {
+							html
+						}
+					}
+					photos {
+						sizes(maxWidth: 400, maxHeight: 300, resizingBehavior: FILL) {
+							...GatsbyContentfulSizes_withWebp
+						}
+					}
 				}
 			}
 		}
