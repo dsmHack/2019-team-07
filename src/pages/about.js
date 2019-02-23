@@ -61,7 +61,6 @@ class RootIndex extends React.Component {
       </Layout>
     );
   }
-                    <LinkButton to="new-events" value="Join our community" />
 }
 
 export default RootIndex;
