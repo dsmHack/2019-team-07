@@ -26,6 +26,7 @@ const handleLogin = (callback) => {
 		netlifyIdentity.on("login", (user) => {
 			clog("logged in!", { user });
 			setUser(user);
+			console.log("blah blah");
 			callback(user);
 		});
 	}
@@ -73,21 +74,19 @@ export class AuthProvider extends Component {
 		isLoggedin: isLoggedIn()
 	};
 
-	checkLogin() {
-		this.setState({ isLoggedIn: isLoggedIn() });
+	checkLogin(cb) {
+		this.setState({ isLoggedIn: isLoggedIn() }, cb);
 	}
 
 	login(cb) {
 		handleLogin(() => {
-			this.checkLogin();
-			setTimeout(cb, 10);
+			window.location.reload();
 		});
 	}
 
 	logout(cb) {
 		handleLogout(() => {
-			this.checkLogin();
-			setTimeout(cb, 10);
+			window.location.reload();
 		});
 	}
 
@@ -97,6 +96,7 @@ export class AuthProvider extends Component {
 	}
 
 	render() {
+		console.log("provider render", this.state.isLoggedIn);
 		return (
 			<AuthContext.Provider
 				value={{
