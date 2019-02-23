@@ -2,47 +2,35 @@ import Img from 'gatsby-image';
 import React from 'react';
 
 import styles from './hero.module.css';
+import HexGrid from './hex-grid';
 
-export default ({ data }) => (
-  <div className={styles.hero}>
-    <ul className={styles.heroSecondarySection + " " + styles.hexGrid}>
-      {Array.apply(0, Array(25)).map((x, i) => {
-        return (
-          <li className={styles.hex}>
-            <div className={styles.hexIn}>
-              <a className={styles.hexLink} href="#">
-                <img
-                  src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg"
-                  alt=""
-                />
-              </a>
-            </div>
-          </li>
-        );
-      })}
-    </ul>
-    <div className={styles.heroMainSection}>
-      <Img
-        className={styles.heroImage}
-        alt={data.name}
-        sizes={data.heroImage.sizes}
-      />
+export default ({ data }) => {
+  const secondaryImagesFirst = data.secondaryHeroImages.filter(
+    (item, index) => {
+      return index <= data.secondaryHeroImages.length / 2;
+    }
+  );
+  const secondaryImagesSecond = data.secondaryHeroImages.filter(
+    (item, index) => {
+      return index > data.secondaryHeroImages.length / 2;
+    }
+  );
+
+  return (
+    <div className={styles.hero}>
+      <div className={styles.heroSecondarySection}>
+        <HexGrid data={secondaryImagesFirst} />
+      </div>
+      <div className={styles.heroPrimarySection}>
+        <Img
+          className={styles.heroImage}
+          alt={data.name}
+          fluid={data.heroImage.fluid}
+        />
+      </div>
+      <div className={styles.heroSecondarySection}>
+        <HexGrid data={secondaryImagesFirst} />
+      </div>
     </div>
-    <ul className={styles.heroSecondarySection + " " + styles.hexGrid}>
-      {Array.apply(0, Array(25)).map((x, i) => {
-        return (
-          <li className={styles.hex}>
-            <div className={styles.hexIn}>
-              <a className={styles.hexLink} href="#">
-                <img
-                  src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg"
-                  alt=""
-                />
-              </a>
-            </div>
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-);
+  );
+};

@@ -17,9 +17,9 @@ class RootIndex extends React.Component {
 
 		return (
 			<Layout>
+				<Hero data={page[0].node} />
 				<div>
 					<Helmet title={siteTitle} />
-					<Hero data={page[0].node} />
 					<Mission mission={mission[0].node} />
 					<div className="wrapper">
 						<div className="row">{features.map(({ node }) => <Feature feature={node} />)}</div>
@@ -39,7 +39,7 @@ export const pageQuery = graphql`
 				node {
 					title
 					image {
-						sizes(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
+						sizes(maxWidth: 350, maxHeight: 350, resizingBehavior: FILL) {
 							...GatsbyContentfulSizes_withWebp
 						}
 					}
@@ -71,13 +71,16 @@ export const pageQuery = graphql`
 					title
 					heroImage {
 						title
+						contentful_id
 						fluid(maxWidth: 1200) {
-							sizes
-							src
-							srcSet
+							...GatsbyContentfulFluid_withWebp
 						}
-						sizes(resizingBehavior: SCALE) {
-							...GatsbyContentfulSizes_withWebp
+					}
+					secondaryHeroImages {
+						title
+						contentful_id
+						fixed(width: 200, height: 200) {
+							...GatsbyContentfulFixed_withWebp
 						}
 					}
 				}

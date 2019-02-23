@@ -16,7 +16,7 @@ class RootIndex extends React.Component {
 			<Layout>
 				<div>
 					<Helmet title={`About Us - ${siteTitle}`} />
-					<div className="wrapper">
+					<div>
 						{about.map(({ node }) => (
 							<div key={node.id}>
 								<HeroImage photos={node.photos} title={node.title} />
@@ -39,7 +39,7 @@ class RootIndex extends React.Component {
 										<img src="https://via.placeholder.com/600x600" />
 									</div>
 									<div className="col text-centered">
-										<h2 className="section-headline">About Les Dames</h2>
+										<h2 className="section-headline text-center">About Les Dames</h2>
 										<div
 											dangerouslySetInnerHTML={{
 												__html: node.about.childMarkdownRemark.html
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
 						}
 					}
 					photos {
-						sizes(maxWidth: 1200, maxHeight: 350, resizingBehavior: SCALE) {
+						sizes(maxWidth: 400, maxHeight: 300, resizingBehavior: FILL) {
 							...GatsbyContentfulSizes_withWebp
 						}
 					}
