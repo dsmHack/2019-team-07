@@ -1,12 +1,12 @@
 import { graphql, navigate, StaticQuery } from "gatsby";
 import Link from "gatsby-link";
 import React, { useEffect } from "react";
-import { handleLogin, initAuth, isLoggedIn, logout } from "./auth";
+import { handleLogin, initAuth, isLoggedIn } from "./auth";
 import Button from "./button";
 import LinkButton from "./link-button";
 import styles from "./navigation.module.css";
 
-const handleSubmit = () => handleLogin(() => navigate(`/app/profile`));
+const handleSubmit = () => handleLogin(() => navigate(`/members/`));
 
 export default () => {
 	useEffect(() => {

@@ -16,7 +16,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<Layout>
-				<div style={{ textAlign: "center", margin: "5em 0" }}>
+				<div style={{ textAlign: "center", margin: "7.5em 0" }}>
 					<h1 class="section-headline">Log in</h1>
 					<p>To read secure content, please log in below.</p>
 					<Button onClick={this.handleSubmit} value="Log in" />
