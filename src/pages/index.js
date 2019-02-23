@@ -35,9 +35,12 @@ class RootIndex extends React.Component {
 									}}
 								/>
 							</div>
-							<div className="text-centered donate-button">
-								<HrefButton href={page[0].node.donateUrl} value="Donate" ghost />
-							</div>
+							{
+								(page[0].node.callToActionEnabled) &&
+									<div className="text-centered donate-button">
+										<HrefButton href={page[0].node.donateUrl} value={page[0].node.callToActionLabel} ghost />
+									</div>
+							}
 						</div>
 					</div>
 				</Container>
@@ -107,6 +110,8 @@ export const pageQuery = graphql`
 						}
 					}
 					donateUrl
+					callToActionLabel
+					callToActionEnabled
 				}
 			}
 		}
