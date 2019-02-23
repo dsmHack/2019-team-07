@@ -44,12 +44,12 @@ nav {
 
 .navigationItemLogo {
 	flex: 1;
+	margin: 0 1em;
 }
 
 .navigationItemLogo img {
 	height: 3em;
 	width: 3em;
-	margin-right: 0.5em;
 }
 
 .navigationLink {

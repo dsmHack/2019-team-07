@@ -4,9 +4,9 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import get from "lodash/get";
 import React from "react";
-import { Calendar, DollarSign } from "react-feather";
+import { Calendar } from "react-feather";
 import Helmet from "react-helmet";
-import HrefButton from "../components/href-button";
+import HeroImage from "../components/hero-image";
 import Layout from "../layouts";
 import styles from "./news-events.module.css";
 
@@ -20,9 +20,11 @@ class RootIndex extends React.Component {
 			<Layout>
 				<div>
 					<Helmet title={`News and Events - ${siteTitle}`} />
-					{info.map(
-						({ node }) =>
-							node.featuredEvent && (
+					{info.map(({ node }) => (
+						<div>
+							<HeroImage photos={node.photos} title={node.title} />
+
+							{node.featuredEvent && (
 								<div className="events-wrapper" style={{ margin: "2em 0" }}>
 									<h2 className="section-headline text-centered">What's next</h2>
 									<div className="row row-center">
@@ -47,8 +49,9 @@ class RootIndex extends React.Component {
 										</div>
 									</div>
 								</div>
-							)
-					)}
+							)}
+						</div>
+					))}
 
 					<div>
 						<h2 className="section-headline text-centered">Dates to Remember</h2>
