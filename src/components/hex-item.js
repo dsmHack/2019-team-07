@@ -9,7 +9,8 @@ class HexItem extends React.Component {
       item: props.item,
       flipped: Math.random() > 0.75,
       color: Math.random(),
-      transitionDelay: Math.round(Math.random() * 4 + 2)
+      // transitionDelay: Math.round(Math.random() * 4 + 2)
+      transitionDelay: props.index % 4 + 2
     };
   }
 
