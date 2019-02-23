@@ -20,3 +20,14 @@
 .memberList strong {
 	font-size: 1.15em;
 }
+
+.extra {
+	font-size: 0.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.extra svg {
+	margin-right: 0.5em;
+}

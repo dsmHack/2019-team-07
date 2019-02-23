@@ -1,61 +1,74 @@
 import get from "lodash/get";
-import React from "react";
+import React, { useContext } from "react";
 import Helmet from "react-helmet";
 import Layout from "../layouts";
 import { graphql } from "gatsby";
 import styles from "./membership.module.css";
 import HeroImage from "../components/hero-image";
+import { AuthContext } from "../components/auth";
+import { Phone, Mail } from "react-feather";
 
-class RootIndex extends React.Component {
-	render() {
-		const siteTitle = get(this, "props.data.site.siteMetadata.title");
-		const members = get(this, "props.data.allContentfulMember.edges");
-		const membership = get(this, "props.data.allContentfulMembership.edges");
+export default ({ data }) => {
+	const siteTitle = get(data, "site.siteMetadata.title");
+	const members = get(data, "allContentfulMember.edges");
+	const membership = get(data, "allContentfulMembership.edges");
+	const context = useContext(AuthContext);
 
-		return (
-			<Layout>
-				<div>
-					<Helmet title={`Membership - ${siteTitle}`} />
-					{membership.map(({ node }) => (
-						<div>
-							<HeroImage photos={node.photos} title={node.title} />
-							<div className="lead">
-								<div
-									dangerouslySetInnerHTML={{
-										__html: node.lead.childMarkdownRemark.html
-									}}
-								/>
-							</div>
-							<h2 className="section-headline text-centered">{node.bodyTitle}</h2>
+	return (
+		<Layout>
+			<div>
+				<Helmet title={`Membership - ${siteTitle}`} />
+				{membership.map(({ node }) => (
+					<div>
+						<HeroImage photos={node.photos} title={node.title} />
+						<div className="lead">
 							<div
 								dangerouslySetInnerHTML={{
-									__html: node.body.childMarkdownRemark.html
+									__html: node.lead.childMarkdownRemark.html
 								}}
 							/>
 						</div>
-					))}
-					<div className="wrapper">
-						<h2 className="section-headline text-centered">Meet our Members</h2>
-						<ul className={styles.memberList}>
-							{members.map(({ node }) => {
-								return (
-									<li key={node.id}>
-										<strong>{node.name}</strong>
-										<div>
-											{node.company} - {node.title}
-										</div>
-									</li>
-								);
-							})}
-						</ul>
+						<h2 className="section-headline text-centered">{node.bodyTitle}</h2>
+						<div
+							dangerouslySetInnerHTML={{
+								__html: node.body.childMarkdownRemark.html
+							}}
+						/>
 					</div>
+				))}
+				<div className="wrapper">
+					<h2 className="section-headline text-centered">Meet our Members</h2>
+					<ul className={styles.memberList}>
+						{members.map(({ node }) => {
+							return (
+								<li key={node.id}>
+									<strong>{node.name}</strong>
+									<div>
+										{node.company} - {node.title}
+									</div>
+									{context.isLoggedIn && (
+										<div>
+											{node.email && (
+												<div className={styles.extra}>
+													<Mail size={12} color="#667" /> {node.email}
+												</div>
+											)}
+											{node.phone && (
+												<div className={styles.extra}>
+													<Phone size={12} color="#667" /> {node.phone}
+												</div>
+											)}
+										</div>
+									)}
+								</li>
+							);
+						})}
+					</ul>
 				</div>
-			</Layout>
-		);
-	}
-}
-
-export default RootIndex;
+			</div>
+		</Layout>
+	);
+};
 
 export const pageQuery = graphql`
 	query MembershipQuery {
@@ -90,9 +103,6 @@ export const pageQuery = graphql`
 					company
 					email
 					phone
-					facebook
-					twitter
-					id
 				}
 			}
 		}

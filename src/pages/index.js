@@ -87,6 +87,13 @@ export const pageQuery = graphql`
 							...GatsbyContentfulFixed_withWebp
 						}
 					}
+					donateHeader
+					donateBody {
+						childMarkdownRemark {
+							html
+						}
+					}
+					donateUrl
 				}
 			}
 		}

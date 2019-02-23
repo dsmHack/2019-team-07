@@ -8,7 +8,7 @@ import Navigation from "../components/navigation";
 class Template extends React.Component {
   render() {
     // eslint-disable-next-line
-    const { location, children } = this.props;
+		const { children } = this.props;
 
     return (
       <div>
