@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "gatsby";
 import styles from "./link-button.module.css";
 
-export default ({ onClick, value, block }) => (
+export default ({ onClick, value, block, ghost }) => (
 	<button
-		className={styles.button}
+		className={ghost ? styles.ghost : styles.button}
 		style={block ? { display: "block", textAlign: "center" } : null}
 		onClick={onClick}
 	>

@@ -1,0 +1,38 @@
+.dtrRow {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.dtr {
+	flex: 1 1 auto;
+	box-shadow: 0 1px 2px #0055a433;
+	padding: 1em;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+	text-align: center;
+	background: #fff;
+}
+
+@media all and (min-width: 600px) {
+	.dtr {
+		max-width: 48%;
+	}
+}
+
+@media all and (min-width: 900px) {
+	.dtr {
+		max-width: 32%;
+	}
+}
+
+.dtrTitle {
+	color: #0055a4;
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.dtrExtra {
+	color: #667;
+}

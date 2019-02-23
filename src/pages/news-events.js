@@ -6,10 +6,11 @@ import get from "lodash/get";
 import React, { useContext } from "react";
 import { Calendar } from "react-feather";
 import Helmet from "react-helmet";
+import { AuthContext } from "../components/auth";
+import DatesToRemember from "../components/dates-to-remember";
 import HeroImage from "../components/hero-image";
 import Layout from "../layouts";
 import styles from "./news-events.module.css";
-import { AuthContext } from "../components/auth";
 
 export default ({ data }) => {
 	const siteTitle = get(data, "site.siteMetadata.title");
@@ -53,24 +54,7 @@ export default ({ data }) => {
 						)}
 					</div>
 				))}
-				{context.isLoggedIn && (
-					<div>
-						<h2 className="section-headline text-centered">Dates to Remember</h2>
-						<div className={styles.dtrRow}>
-							{dtrs.filter((x) => new Date(x.node.startDate) > new Date()).map(({ node }) => (
-								<div className={styles.dtr}>
-									<h3 className={styles.dtrTitle}>{node.date}</h3>
-									<div
-										dangerouslySetInnerHTML={{
-											__html: node.description.childMarkdownRemark.html
-										}}
-									/>
-									{node.extraInfo && <p className={styles.dtrExtra}>{node.extraInfo}</p>}
-								</div>
-							))}
-						</div>
-					</div>
-				)}
+				{context.isLoggedIn && <DatesToRemember dtrs={dtrs} />}
 
 				{/* <div className="news-wrapper">
 						<h2 className="section-headline">News</h2>
