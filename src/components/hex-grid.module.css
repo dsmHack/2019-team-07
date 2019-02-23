@@ -66,52 +66,6 @@ ul.hexGrid {
   transform: rotate3d(0, 0, 0, 0deg);
 }
 
-/* .hex h2,
-  .hex p {
-    width: 100%;
-    padding: 5%;
-    box-sizing: border-box;
-    background-color: rgba(0, 128, 128, 0.8);
-    font-weight: 300;
-    -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.3s ease-out;
-    transition: transform 0.2s ease-out, opacity 0.3s ease-out;
-  }
-  .hex h2 {
-    bottom: 50%;
-    padding-top: 50%;
-    font-size: 1.5em;
-    z-index: 1;
-    -webkit-transform: translate3d(0, -100%, 0);
-    -ms-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  .hex h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 45%;
-    width: 10%;
-    text-align: center;
-    border-bottom: 1px solid #fff;
-  }
-  .hex p {
-    top: 50%;
-    padding-bottom: 50%;
-    -webkit-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  } */
-
-/*** HOVER EFFECT  **********************************************************************/
-/* .hexLink:hover h2,
-  .hexLink:focus h2,
-  .hexLink:hover p,
-  .hexLink:focus p {
-    -webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  } */
-
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 
 @media (min-width: 601px) {
@@ -122,24 +76,5 @@ ul.hexGrid {
   .hex:nth-child(5n + 4) {
     /* first hexagon of even rows */
     grid-column-start: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  /* <- 2-1  hexagons per row */
-  .hexGrid {
-    grid-template-columns: repeat(4, 1fr);
-    padding-bottom: 11.2%;
-    grid-gap: 5px;
-  }
-  .hex:nth-child(3n + 3) {
-    /* first hexagon of even rows */
-    grid-column-start: 2;
-  }
-}
-
-@media (max-width: 400px) {
-  .hexGrid {
-    font-size: 13px;
   }
 }

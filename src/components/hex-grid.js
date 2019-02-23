@@ -8,9 +8,9 @@ export default ({ data }) => (
       {data.map((item, index) => (
         <li className={styles.hex} key={item.contentful_id}>
           <div className={styles.hexIn}>
-            <a className={styles.hexLink} href="#">
+            <div className={styles.hexLink}>
               <img alt={item.title} src={item.fixed.src} />
-            </a>
+            </div>
           </div>
         </li>
       ))}

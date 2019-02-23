@@ -4,19 +4,15 @@ import get from "lodash/get";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 
-import heroStyles from "../components/hero.module.css";
 
 class BlogPostTemplate extends React.Component {
 	render() {
-		const post = get(this.props, "data.contentfulNewsLetter");
+		const post = get(this.props, "data.contentfulNews");
 		const siteTitle = get(this.props, "data.site.siteMetadata.title");
 
 		return (
 			<div style={{ background: "#fff" }}>
 				<Helmet title={`${post.title} | ${siteTitle}`} />
-				<div className={heroStyles.hero}>
-					<Img className={heroStyles.heroImage} alt={post.title} sizes={post.heroImage.sizes} />
-				</div>
 				<div className="wrapper">
 					<h1 className="section-headline">{post.title}</h1>
 					<p
@@ -24,13 +20,9 @@ class BlogPostTemplate extends React.Component {
 							display: "block"
 						}}
 					>
-						{post.publishDate}
+						{post.date}
 					</p>
-					<div
-						dangerouslySetInnerHTML={{
-							__html: post.body.childMarkdownRemark.html
-						}}
-					/>
+					<div>Hello World!</div>
 				</div>
 			</div>
 		);
@@ -40,16 +32,11 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-	query NewsLetterBySlug($slug: String!) {
-		contentfulNewsLetter(slug: { eq: $slug }) {
+	query NewsByTitle($title: String!) {
+		contentfulNews(title: { eq: $title }) {
 			title
-			publishDate(formatString: "MMMM Do, YYYY")
-			heroImage {
-				sizes(maxWidth: 1180, background: "rgb:000000") {
-					...GatsbyContentfulSizes_withWebp
-				}
-			}
-			body {
+			date(formatString: "MMMM Do, YYYY")
+			content {
 				childMarkdownRemark {
 					html
 				}
