@@ -5,8 +5,7 @@ nav {
 .navigation {
 	padding: 0;
 	margin: 0;
-	height: 5em;
-	max-height: 100px;
+	height: 5rem;
 	font-size: 1.25em;
 	position: fixed;
 	top: 0;
@@ -17,6 +16,20 @@ nav {
 	background-color: #fff;
 	box-shadow: 0 0 1px rgba(200, 200, 220, 0.5);
 	z-index: 9;
+}
+
+body {
+	padding-top: 5rem;
+}
+
+@media all and (min-width: 960px) {
+	.navigation {
+		height: 8rem;
+	}
+
+	body {
+		padding-top: 8rem;
+	}
 }
 
 .navigationList {
@@ -47,9 +60,37 @@ nav {
 	margin: 0 1em;
 }
 
+.navigationItemLogo a {
+	text-decoration: none;
+}
+
 .navigationItemLogo img {
-	height: 3em;
-	width: 3em;
+	height: 4rem;
+	width: 4rem;
+	margin-right: 1em;
+}
+
+@media all and (max-width: 959px) {
+	.logoText {
+		display: none;
+	}
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	font-size: 0.9rem;
+}
+
+@media all and (min-width: 960px) {
+	.logo {
+		display: none;
+	}
+
+	.navigationItemLogo img {
+		height: 7.5rem;
+		width: 7.5rem;
+	}
 }
 
 .navigationLink {
