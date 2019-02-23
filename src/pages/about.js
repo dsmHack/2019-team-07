@@ -29,7 +29,7 @@ class RootIndex extends React.Component {
                         __html: node.chapterInformation.childMarkdownRemark.html
                       }}
                     />
-                    <LinkButton to="new-events" value="Join our community" />
+					<LinkButton to="news-events" value="Join our community" />
                   </div>
                   <div className={`col ${styles.col}`}>
                     <img src={node.chapterImage.sizes.src} alt="" />
@@ -61,6 +61,7 @@ class RootIndex extends React.Component {
       </Layout>
     );
   }
+                    <LinkButton to="new-events" value="Join our community" />
 }
 
 export default RootIndex;

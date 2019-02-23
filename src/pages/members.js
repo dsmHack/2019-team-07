@@ -27,7 +27,7 @@ export default class Members extends Component {
 				<div>
 					<Helmet title={`Members Only - ${siteTitle}`} />
 					{membersOnly.map(({ node }) => (
-						<div style={{ marginBottom: "2em" }}>
+						<div style={{ margin: "2em 0" }}>
 							<h1 className="section-headline text-centered">{node.title}</h1>
 							<div>
 								<div

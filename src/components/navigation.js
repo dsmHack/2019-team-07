@@ -82,7 +82,7 @@ export default class Navigation extends Component {
 							<li className={styles.navigationItem}>
 								<span style={{ fontSize: "0.75em", whiteSpace: "nowrap" }}>
 									{context.isLoggedIn ? (
-										<LinkButton to={"members/"} value="Members Content" ghost />
+										<LinkButton to={"members/"} value="Member Content" ghost />
 									) : (
 										<Button onClick={this.handleSubmit.bind(this)} value="Member Login" ghost />
 									)}
@@ -106,7 +106,7 @@ export default class Navigation extends Component {
 								))}
 								<li>
 									{context.isLoggedIn ? (
-										<Link to={"members/"}>Members Content</Link>
+										<Link to={"members/"}>Member Content</Link>
 									) : (
 										<a onClick={this.handleSubmit.bind(this)}>Member Login</a>
 									)}
