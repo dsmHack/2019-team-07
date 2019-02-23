@@ -29,7 +29,7 @@ class RootIndex extends React.Component {
                         __html: node.chapterInformation.childMarkdownRemark.html
                       }}
                     />
-					<LinkButton to="news-events" value="Join our community" />
+					<LinkButton to={node.communityUrl} value="Join our community" />
                   </div>
                   <div className={`col ${styles.col}`}>
                     <img src={node.chapterImage.sizes.src} alt="" />
@@ -76,7 +76,8 @@ export const pageQuery = graphql`
             childMarkdownRemark {
               html
             }
-          }
+		  }
+		  communityUrl
           chapterImage {
             sizes(maxWidth: 600, maxHeight: 350, resizingBehavior: FILL) {
               ...GatsbyContentfulSizes_withWebp
