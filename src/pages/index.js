@@ -72,7 +72,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulBasicPage(
+    allContentfulHomePage(
       filter: { contentful_id: { eq: "7xXpIF01hW7xFEyGqa5SI2" } }
     ) {
       edges {
