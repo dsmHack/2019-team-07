@@ -1,0 +1,20 @@
+.event {
+	width: 100%;
+}
+
+@media all and (min-width: 600px) {
+	.event {
+		width: 45%;
+	}
+}
+
+@media all and (min-width: 900px) {
+	.event {
+		width: 30%;
+	}
+}
+
+.eventTitle {
+	color: #0055a4;
+	margin-bottom: 0.5em;
+}

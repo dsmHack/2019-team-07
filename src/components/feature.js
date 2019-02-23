@@ -6,7 +6,7 @@ import LinkButton from "./link-button";
 export default ({ feature }) => (
 	<div className={styles.featureWrapper}>
 		<div className={styles.feature}>
-			<Img sizes={feature.image.sizes} />
+			{feature.image && <Img sizes={feature.image.sizes} />}
 			<div style={{ flex: 1 }}>
 				<div
 					dangerouslySetInnerHTML={{
