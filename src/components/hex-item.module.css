@@ -2,9 +2,18 @@
   grid-column-end: span 2;
 }
 
-.flipContainer:nth-child(5n + 4) {
-  /* first hexagon of even rows */
-  grid-column-start: 2;
+@media (min-width: 900px) {
+  .flipContainer:nth-child(7n + 5) {
+    /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .flipContainer:nth-child(5n + 4) {
+    /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
 }
 
 /* .flipContainer.flip .hex {
@@ -121,7 +130,8 @@
     transform: rotateY(0deg);
   }
 
-  75%, 100% {
+  75%,
+  100% {
     transform: rotateY(180deg);
   }
 }
@@ -137,7 +147,8 @@
     transform: rotateY(0deg);
   }
 
-  50%, 100% {
+  50%,
+  100% {
     transform: rotateY(180deg);
   }
 }
@@ -153,7 +164,8 @@
     transform: rotateY(0deg);
   }
 
-  30%, 100% {
+  30%,
+  100% {
     transform: rotateY(180deg);
   }
 }

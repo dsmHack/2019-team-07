@@ -3,10 +3,11 @@ import get from "lodash/get";
 import React from "react";
 import Helmet from "react-helmet";
 
+import Container from "../components/container";
 import Feature from "../components/feature";
 import Hero from "../components/hero";
 import Mission from "../components/mission";
-import Layout from "../layouts";
+import HomePageLayout from "../layouts/homePage";
 
 class RootIndex extends React.Component {
 	render() {
@@ -16,16 +17,18 @@ class RootIndex extends React.Component {
 		const page = get(this, "props.data.allContentfulHomePage.edges");
 
 		return (
-			<Layout>
+			<HomePageLayout>
 				<Hero data={page[0].node} />
-				<div>
-					<Helmet title={siteTitle} />
-					<Mission mission={mission[0].node} />
-					<div className="wrapper">
-						<div className="row">{features.map(({ node }) => <Feature feature={node} />)}</div>
+				<Container>
+					<div>
+						<Helmet title={siteTitle} />
+						<Mission mission={mission[0].node} />
+						<div className="wrapper">
+							<div className="row">{features.map(({ node }) => <Feature feature={node} />)}</div>
+						</div>
 					</div>
-				</div>
-			</Layout>
+				</Container>
+			</HomePageLayout>
 		);
 	}
 }
