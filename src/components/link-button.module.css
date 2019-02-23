@@ -39,3 +39,21 @@
 .ghostGreen {
 	color: #20bf55;
 }
+
+.ghost:hover,
+.ghost:focus {
+	background-color: #0055a411;
+}
+
+.ghost:active {
+	background-color: #0055a433;
+}
+
+.ghostGreen:hover,
+.ghostGree:focus {
+	background-color: #20bf5511;
+}
+
+.ghostGreen:active {
+	background-color: #20bf5533;
+}
