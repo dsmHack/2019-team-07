@@ -7,11 +7,11 @@
   grid-column-start: 2;
 }
 
-.flipContainer.flip .hex {
+/* .flipContainer.flip .hex {
   animation-direction: alternate-reverse;
   animation-delay: 0;
-  transform: rotateY(180deg);
-}
+  transform: rotateY(180deg); 
+} */
 
 .hex {
   position: relative;
@@ -99,7 +99,7 @@
   background: #00ace8;
 }
 
-@keyframes flip1 {
+/* @keyframes flip1 {
   0% {
     transform: rotateY(0deg);
   }
@@ -114,7 +114,7 @@
   animation-name: flip1;
   animation-duration: 2s;
   animation-delay: 0.5s;
-}
+} */
 
 @keyframes flip2 {
   0%,

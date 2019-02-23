@@ -9,7 +9,7 @@ class HexItem extends React.Component {
       item: props.item,
       flipped: Math.random() > 0.75,
       color: Math.random(),
-      transitionDelay: Math.round(Math.random() * 5 + 1)
+      transitionDelay: Math.round(Math.random() * 4 + 2)
     };
   }
 
@@ -53,7 +53,9 @@ class HexItem extends React.Component {
             </div>
           </div>
           <div className={`${styles.hexIn} ${styles.hexBack} ${this.getColor()}`}>
-            <div className={styles.hexLink} />
+            <div className={styles.hexLink}>
+              &nbsp;
+            </div>
           </div>
         </div>
       </li>
