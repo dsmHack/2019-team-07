@@ -7,6 +7,7 @@ exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions;
 
 	const additionalPage = path.resolve("./src/templates/additional-page.js");
+	const newsComponent = path.resolve("./src/templates/news-post.js");
 	return graphql(
 		`
           {
@@ -14,10 +15,16 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
 									slug
-                  title
                 }
               }
-            }
+						}
+						allContentfulNews {
+							edges {
+								node {
+									slug
+								}
+							}
+						}
 					}
         `
 	).then((result) => {
@@ -30,6 +37,17 @@ exports.createPages = ({ graphql, actions }) => {
 			createPage({
 				path: `/page/${post.node.slug}/`,
 				component: additionalPage,
+				context: {
+					slug: post.node.slug
+				}
+			});
+		});
+
+		const news = result.data.allContentfulNews.edges;
+		news.forEach((post) => {
+			createPage({
+				path: `/news/${post.node.slug}/`,
+				component: newsComponent,
 				context: {
 					slug: post.node.slug
 				}
