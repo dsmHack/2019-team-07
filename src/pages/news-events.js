@@ -12,6 +12,7 @@ import HeroImage from "../components/hero-image";
 import LinkButton from "../components/link-button";
 import Layout from "../layouts";
 import styles from "./news-events.module.css";
+import HrefButton from "../components/href-button";
 
 export default ({ data }) => {
 	const siteTitle = get(data, "site.siteMetadata.title");
@@ -47,6 +48,7 @@ export default ({ data }) => {
 												__html: node.featuredEvent.description.childMarkdownRemark.html
 											}}
 										/>
+										{node.url && <HrefButton href={node.url} value="Tickets" />}
 									</div>
 									<div className={styles.eventImage}>
 										<Img sizes={node.featuredEvent.eventImage.sizes} />
@@ -109,6 +111,7 @@ export const pageQuery = graphql`
 								...GatsbyContentfulSizes_withWebp
 							}
 						}
+						url
 					}
 				}
 			}
