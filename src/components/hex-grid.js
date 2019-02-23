@@ -14,7 +14,7 @@ class HexGrid extends React.Component {
       <div className={styles.hexContainer}>
         <ul className={styles.hexGrid}>
           {this.state.data.map((item, index) => (
-            <HexItem item={item} index={index} />
+            <HexItem item={item} index={index} key={item.contentful_id} />
           ))}
         </ul>
       </div>

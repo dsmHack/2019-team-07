@@ -7,17 +7,10 @@
   grid-column-start: 2;
 }
 
-/* .flipContainer.flip .hex {
-  animation-direction: alternate-reverse;
-  animation-delay: 0;
-  transform: rotateY(180deg); 
-} */
-
 .hex {
   position: relative;
   visibility: hidden;
   outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
-  /* transition: 1.5s; */
   transform-style: preserve-3d;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
@@ -99,23 +92,6 @@
   background: #00ace8;
 }
 
-/* @keyframes flip1 {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  60%,
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
-.delay1 {
-  animation-name: flip1;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-} */
-
 @keyframes flip2 {
   0% {
     transform: rotateY(0deg);
@@ -183,88 +159,3 @@
   animation-duration: 6.5s;
   animation-delay: 4s;
 }
-
-/*@keyframes flip6 {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  20%,
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
- .delay6 {
-  animation-name: flip6;
-  animation-duration: 7.5s;
-  animation-delay: 6s;
-}
-
-@keyframes flip7 {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  18%,
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
-.delay7 {
-  animation-name: flip7;
-  animation-duration: 8.5s;
-  animation-delay: 7s;
-}
-
-@keyframes flip8 {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  16%,
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
-.delay8 {
-  animation-name: flip8;
-  animation-duration: 9.5s;
-  animation-delay: 8s;
-}
-
-@keyframes flip9 {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  14%,
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
-.delay9 {
-  animation-name: flip9;
-  animation-duration: 10.5s;
-  animation-delay: 9s;
-}
-
-@keyframes flip10 {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  13%,
-  100% {
-    transform: rotateY(180deg);
-  }
-}
-
-.delay10 {
-  animation-name: flip10;
-  animation-duration: 11.5s;
-  animation-delay: 10s;
-} */

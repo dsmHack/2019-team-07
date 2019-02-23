@@ -24,7 +24,7 @@ class RootIndex extends React.Component {
 						<Helmet title={siteTitle} />
 						<Mission mission={mission[0].node} />
 						<div className="wrapper">
-							<div className="row">{features.map(({ node }) => <Feature feature={node} />)}</div>
+							<div className="row">{features.map(({ node }) => <Feature feature={node} key={node.contentful_id} />)}</div>
 						</div>
 						<div style={{ margin: "2em" }}>
 							<h2 className="section-headline text-centered">{page[0].node.donateHeader}</h2>
@@ -54,6 +54,7 @@ export const pageQuery = graphql`
 			edges {
 				node {
 					title
+					contentful_id
 					image {
 						sizes(maxWidth: 350, maxHeight: 350, resizingBehavior: FILL) {
 							...GatsbyContentfulSizes_withWebp

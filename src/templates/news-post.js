@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
 import get from "lodash/get";
 import React from "react";
+import { Calendar, Download } from "react-feather";
 import Helmet from "react-helmet";
 import Layout from "../layouts";
-import { Calendar, Download } from "react-feather";
 
 class BlogPostTemplate extends React.Component {
 	render() {
