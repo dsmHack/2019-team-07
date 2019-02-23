@@ -6,40 +6,34 @@ const path = require("path");
 exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions;
 
-		const newsPost = path.resolve("./src/templates/news-post.js");
-		return graphql(
-				`
+	const additionalPage = path.resolve("./src/templates/additional-page.js");
+	return graphql(
+		`
           {
-            allContentfulNews {
+            allContentfulAdditionalPage {
               edges {
                 node {
+									slug
                   title
-									teaserText
-									content{
-										childMarkdownRemark {
-											html
-										}
-									}
-									date
                 }
               }
             }
 					}
         `
-			).then((result) => {
-				if (result.errors) {
-					console.log(result.errors);
-				}
+	).then((result) => {
+		if (result.errors) {
+			console.log(result.errors);
+		}
 
-				const posts = result.data.allContentfulNews.edges;
-				posts.forEach((post, index) => {
-					createPage({
-						path: `/news/${post.node.title}/`,
-						component: newsPost,
-						context: {
-							title: post.node.title
-						}
-					});
-				});
-			})
+		const posts = result.data.allContentfulAdditionalPage.edges;
+		posts.forEach((post) => {
+			createPage({
+				path: `/page/${post.node.slug}/`,
+				component: additionalPage,
+				context: {
+					slug: post.node.slug
+				}
+			});
+		});
+	});
 };
