@@ -48,8 +48,8 @@ export default ({ data }) => {
 												__html: node.featuredEvent.description.childMarkdownRemark.html
 											}}
 										/>
-										{node.featuredEvent.url && (
-											<HrefButton href={node.featuredEvent.url} value="Tickets" />
+										{node.featuredEvent.url && node.featuredEvent.callToActionEnabled && (
+											<HrefButton href={node.featuredEvent.url} value={node.featuredEvent.callToActionLabel} />
 										)}
 									</div>
 									<div className={styles.eventImage}>
@@ -114,6 +114,8 @@ export const pageQuery = graphql`
 							}
 						}
 						url
+						callToActionLabel
+						callToActionEnabled
 					}
 				}
 			}
