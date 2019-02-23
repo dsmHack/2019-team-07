@@ -28,7 +28,7 @@ class RootIndex extends React.Component {
 						</div>
 						<div style={{ margin: "2em" }}>
 							<h2 className="section-headline text-centered">{page[0].node.donateHeader}</h2>
-							<div className="lead">
+							<div className="lead lead-no-margin">
 								<div
 									dangerouslySetInnerHTML={{
 										__html: page[0].node.donateBody.childMarkdownRemark.html

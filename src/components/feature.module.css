@@ -1,6 +1,7 @@
 .featureWrapper {
 	width: 100%;
 	margin-bottom: 30px;
+	width: 30%;
 }
 
 .feature {
@@ -14,14 +15,8 @@
 	justify-self: baseline;
 }
 
-@media all and (min-width: 600px) {
+@media (max-width: 600px) {
 	.featureWrapper {
-		width: 45%;
-	}
-}
-
-@media all and (min-width: 900px) {
-	.featureWrapper {
-		width: 30%;
+		width: 100%;
 	}
 }
