@@ -1,22 +1,24 @@
 import React from "react";
+// eslint-disable-next-line
 import base from "./base.css";
 import Container from "../components/container";
-import Navigation from "../components/navigation";
 import Footer from "../components/footer";
+import Navigation from "../components/navigation";
 
 class Template extends React.Component {
-	render() {
-		const { location, children } = this.props;
+  render() {
+    // eslint-disable-next-line
+    const { location, children } = this.props;
 
-		return (
-			<div>
-				<Navigation />
+    return (
+      <div>
+        <Navigation />
 
-				<Container>{children}</Container>
-				<Footer />
-			</div>
-		);
-	}
+        <Container>{children}</Container>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default Template;

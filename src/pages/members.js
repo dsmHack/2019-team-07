@@ -2,7 +2,7 @@ import get from "lodash/get";
 import React, { useEffect } from "react";
 import Helmet from "react-helmet";
 import Layout from "../layouts";
-import { graphql, navigate } from "gatsby";
+import { navigate } from "gatsby";
 import { isLoggedIn } from "../components/auth";
 
 export default () => {
