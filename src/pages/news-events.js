@@ -48,7 +48,9 @@ export default ({ data }) => {
 												__html: node.featuredEvent.description.childMarkdownRemark.html
 											}}
 										/>
-										{node.url && <HrefButton href={node.url} value="Tickets" />}
+										{node.featuredEvent.url && (
+											<HrefButton href={node.featuredEvent.url} value="Tickets" />
+										)}
 									</div>
 									<div className={styles.eventImage}>
 										<Img sizes={node.featuredEvent.eventImage.sizes} />
