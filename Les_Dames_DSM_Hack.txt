@@ -1,0 +1,191 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DSM Hack 2019
+Les Dames d’Escoffier
+Documentation
+2/23/19
+
+
+
+
+Your web site is accessed using this URL:  https://lesdamesdsm.org
+
+The web site uses several online services to provide various functionality.
+
+
+Cloud Flare 
+
+When users go to https://lesdamesdsm.org, the CloudFlare DNS record directs it to Netlify.
+
+Web site:	https://www.cloudflare.com
+
+There is a $10 a year fee to use Cloud Flare.
+
+
+Netlify
+
+This is where your web site is hosted and user logins are managed.
+
+Web Site:	https://www.netlify.com
+
+You can see the accounts of users who can log into the web site here.
+
+There is no charge to use the tier of service you are currently signed up for.
+
+This web page explains their pricing:  https://www.netlify.com/pricing/
+
+Jill is the only person who has a Netlify account since they charge for additional user accounts.
+
+When a new user signs up, Jill will receive an email as a FYI.  She should then verify they are actually a member buy signing into Netlify and clicking on the Identity tab at top. 
+
+If they are not a member, Jill will need to manually delete their account by viewing it and clicking on the “Delete Account” button.
+
+
+Contentful
+
+This is where you maintain the content for your web site.
+
+Web Site:	https://www.contentful.com
+Using guide:  https://www.contentful.com/r/knowledgebase/contentful-101/
+
+There is no charge to use the tier of service you are currently signed up for.
+
+
+
+Ticket Tailor
+
+This is where you sell tickets for events.  You setup the event and ticket, then add a link to it in Contentful so it shows up on your web site.
+
+Web Site:   https://www.tickettailor.com
+
+They only charge when you sell tickets.  
+
+This explains what they charge:  https://www.tickettailor.com/pricing/
+
+Web site colors used.
+
+When we designed the site, we used the following color codes:
+
+Green:		#20BF55
+Dark Blue:	#0055A4
+Ligher Blue:	#00ACE8
+Light Grey:	#FBFBFF
+Black:		#2B2B2B
+
+
+
+
+Content types setup in Contently
+
+Any - Shows all content types setup
+
+About - Content for the About / Get to Know Us page: http://lesdamesdsm.org/about/
+
+Additional Page - Used to create new pages on the web site.  Review the “Sample Page (Do NOT Delete)” page as an example.  You can see the sample page at:  
+http://lesdamesdsm.org/page/sample-page-do-not-delete/
+
+After you create a new page, you refer to it by the text in the slug field.  The slug field is auto-created as you type in the title, but you can change or shorten.  The important thing is that the slug is unique to this page.  
+
+Once the page is created, you add it as page/<slug> in Main Navigation.  For example, if the slug for a page is “good-wine”, you would add it as page/good-wine.  Review other navigation items to see how they were setup.
+
+Contact Us - Content for the Contact Us page: http://lesdamesdsm.org/contact-us/
+
+Date to Remember - Events and files, like newsletters,  that shows up on “Members Only” page:  http://lesdamesdsm.org/news-events/ .  These events will only display for logged in members via the “Member Content” button.
+
+Event - Individual events that show up in the Events & New page:  
+http://lesdamesdsm.org/news-events/  Do not edit events here.  It is easier to add and edit them from inside of the Events and News content type.
+
+Events and News - Contains the definition for the Network with Us page:  
+http://lesdamesdsm.org/news-events/. Here you can change the top images and add new events.  There needs to be at least 1 event listed.  If you have no events listed use a placeholder “we have no events” event.
+
+Features - Contains the “Features” listed on the home page:  http://lesdamesdsm.org
+
+Giving - Contains the content for the giving page:  
+http://lesdamesdsm.org/giving/ Philanthropic event’s are added and maintained here.
+
+Home Page - Contains the images for the home page:  http://lesdamesdsm.org You can add/change the main image and the images displayed in the honey comb here.
+
+Main Navigation - Contains the links included in the top main navigation.  This is what associates each link to the different web pages.  Be careful making changes here.
+
+Member - Contains the list of club members.  The list is displayed on the membership page:  http://lesdamesdsm.org/membership/  You add, edit and delete members here.  Email addresses and phone numbers are only displayed for logged in members.  If you do not have content for a required field, type in a space.
+
+Members Only - This is text that is displayed to members after they log in.
+
+Membership - Contains the content for the Membership page:  
+http://lesdamesdsm.org/membership/ You can maintain images and text for the page here.
+
+Members Only - Displays text that is displayed when a member logs in.
+
+Mission Statement - Contains the mission statement that displays at the top of the home page:  http://lesdamesdsm.org
+
+Navigation Item - Contains the individual items for the top main navigation.  These items are best maintained inside of the Main Navigation content type.
+
+News - Not used right now.
+
+News Letter - Not used right now.
+
+Philanthropic Event - These are the individual philanthropic events that are listed at the bottom of the giving page:  http://lesdamesdsm.org/giving/  These events should be maintained in the Grants & Scholarships content type.
+
+Social Media - This is where the social media links that display in the footer of the web site are maintained.  If you create a new twitter or instagram account, you can add links to them here.  Right now we have them linking to the national organization.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Continued Support
+
+The following DSM Hackers are willing to provide ongoing support:
+
+
+Derek Etnyre - 	detnyre@mac.com
+
+Eric Ponto -  		eric.ponto@gmail.com
+
+Shane Church -       shane@s-church.net
+
+Maggie Pena 	pb4short@gmail.com
+
+Anthony Larson	anthony.r.larson@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
