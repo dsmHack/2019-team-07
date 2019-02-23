@@ -2,18 +2,9 @@
   grid-column-end: span 2;
 }
 
-@media (min-width: 900px) {
-  .flipContainer:nth-child(7n + 5) {
-    /* first hexagon of even rows */
-    grid-column-start: 2;
-  }
-}
-
-@media (max-width: 900px) {
-  .flipContainer:nth-child(5n + 4) {
-    /* first hexagon of even rows */
-    grid-column-start: 2;
-  }
+.flipContainer:nth-child(5n + 4) {
+  /* first hexagon of even rows */
+  grid-column-start: 2;
 }
 
 /* .flipContainer.flip .hex {
