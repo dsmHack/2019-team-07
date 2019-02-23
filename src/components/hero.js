@@ -29,7 +29,7 @@ export default ({ data }) => {
         />
       </div>
       <div className={styles.heroSecondarySection}>
-        <HexGrid data={secondaryImagesFirst} />
+        <HexGrid data={secondaryImagesSecond} />
       </div>
     </div>
   );
