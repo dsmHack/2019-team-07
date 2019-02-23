@@ -1,4 +1,5 @@
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import get from "lodash/get";
 import React from "react";
 import Helmet from "react-helmet";
@@ -31,12 +32,27 @@ class RootIndex extends React.Component {
 										<LinkButton to="new-events" value="Join the community" />
 									</div>
 									<div className="col">
-										<img src="https://via.placeholder.com/600x300" />
+										<Img sizes={node.chapterImage.sizes} alt="" />
 									</div>
 								</div>
 								<div className="row" style={{ marginBottom: "4em" }}>
 									<div className="col">
-										<img src="https://via.placeholder.com/600x600" />
+										<div className="row" style={{ marginBottom: "1em" }}>
+											<div style={{ flexGrow: 2, marginRight: "1em" }}>
+												<Img sizes={node.aboutLandscapePhotos[0].sizes} alt="" />
+											</div>
+											<div style={{ flexGrow: 1 }}>
+												<Img sizes={node.aboutPortraitPhotos[0].sizes} alt="" />
+											</div>
+										</div>
+										<div className="row">
+											<div style={{ flexGrow: 1, marginRight: "1em" }}>
+												<Img sizes={node.aboutPortraitPhotos[1].sizes} alt="" />
+											</div>
+											<div style={{ flexGrow: 2 }}>
+												<Img sizes={node.aboutLandscapePhotos[1].sizes} alt="" />
+											</div>
+										</div>
 									</div>
 									<div className="col text-centered">
 										<h2 className="section-headline text-center">About Les Dames</h2>
@@ -71,6 +87,11 @@ export const pageQuery = graphql`
 							html
 						}
 					}
+					chapterImage {
+						sizes(maxWidth: 600, maxHeight: 350, resizingBehavior: FILL) {
+							...GatsbyContentfulSizes_withWebp
+						}
+					}
 					photos {
 						sizes(maxWidth: 400, maxHeight: 300, resizingBehavior: FILL) {
 							...GatsbyContentfulSizes_withWebp
@@ -81,6 +102,16 @@ export const pageQuery = graphql`
 							html
 						}
 					}
+					aboutLandscapePhotos {
+						sizes(maxWidth: 400, maxHeight: 300, resizingBehavior: FILL) {
+							...GatsbyContentfulSizes_withWebp
+						}
+					}
+					aboutPortraitPhotos {
+						sizes(maxWidth: 200, maxHeight: 300, resizingBehavior: FILL) {
+							...GatsbyContentfulSizes_withWebp
+						}
+					}
 					quote {
 						childMarkdownRemark {
 							html
@@ -88,6 +119,11 @@ export const pageQuery = graphql`
 					}
 					quotePerson
 				}
+			}
+		}
+		site {
+			siteMetadata {
+				title
 			}
 		}
 	}
