@@ -48,7 +48,16 @@ export default () => {
 					<ul className={styles.navigationList}>
 						<li className={styles.navigationItemLogo}>
 							<Link to="/">
-								<img src="/logo.jpg" alt="" />
+								<img className={styles.logoText} src="/logo-text.svg" alt="" />
+								<span className={styles.logo}>
+									<img src="/logo.svg" alt="" />
+									<span>
+										<strong style={{ display: "block" }}>
+											Les Dames d'Escossier International
+										</strong>
+										Greater Des Moines Chapter
+									</span>
+								</span>
 							</Link>
 						</li>
 
