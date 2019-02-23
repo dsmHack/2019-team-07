@@ -1,4 +1,4 @@
-import { navigate } from "gatsby";
+import { navigate, graphql } from "gatsby";
 import get from "lodash/get";
 import React, { Component } from "react";
 import Helmet from "react-helmet";

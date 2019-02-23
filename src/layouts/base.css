@@ -113,21 +113,3 @@ a {
   text-align: center;
 }
 
-/* @media (min-width: 1200px) {
-}
-
-@media (max-width: 1200px) {
-}
-
-@media (max-width: 992px) {
-}
-
-@media (max-width: 576px) {
-  .row {
-    flex-direction: column-reverse;
-  }
-
-  .col:not(:last-child) {
-    margin-right: 0;
-  }
-} */
