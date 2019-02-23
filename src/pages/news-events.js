@@ -13,39 +13,61 @@ import styles from "./news-events.module.css";
 class RootIndex extends React.Component {
 	render() {
 		const siteTitle = get(this, "props.data.site.siteMetadata.title");
-		const news = get(this, "props.data.allContentfulNews.edges");
-		const events = get(this, "props.data.allContentfulEvent.edges");
+		const info = get(this, "props.data.allContentfulEventsAndNews.edges");
+		const dtrs = get(this, "props.data.allContentfulDateToRemember.edges");
 
 		return (
 			<Layout>
 				<div>
 					<Helmet title={`News and Events - ${siteTitle}`} />
-					<div className="events-wrapper">
-						<h2 className="section-headline">Latest Event</h2>
-						{events.map(({ node }) => (
-							<div className="row">
-								<div className={styles.eventData}>
-									<h3 className={styles.title}>{node.eventName}</h3>
-									<div className={styles.meta}>
-										<div className={styles.metaItem}>
-											<Calendar /> {new Date(node.dateTime).toLocaleDateString("en-us")}
-										</div>
-										{node.price && (
+					{info.map(
+						({ node }) =>
+							node.featuredEvent && (
+								<div className="events-wrapper" style={{ margin: "2em 0" }}>
+									<h2 className="section-headline text-centered">What's next</h2>
+									<div className="row row-center">
+										<div className={styles.eventData}>
+											<h3 className={styles.title}>{node.featuredEvent.eventName}</h3>
 											<div className={styles.metaItem}>
-												<DollarSign /> {node.price}
+												<Calendar />{" "}
+												{new Date(node.featuredEvent.dateTime).toLocaleDateString("en-us", {
+													month: "long",
+													day: "numeric",
+													year: "numeric"
+												})}
 											</div>
-										)}
+											<div
+												dangerouslySetInnerHTML={{
+													__html: node.featuredEvent.description.childMarkdownRemark.html
+												}}
+											/>
+										</div>
+										<div className={styles.eventImage}>
+											<Img sizes={node.featuredEvent.eventImage.sizes} />
+										</div>
 									</div>
-									<p>{node.eventDetails}</p>
-									<HrefButton href={node.url} value="Attend" />
 								</div>
-								<div className={styles.eventImage}>
-									<Img sizes={node.eventImage.sizes} />
+							)
+					)}
+
+					<div>
+						<h2 className="section-headline text-centered">Dates to Remember</h2>
+						<div className={styles.dtrRow}>
+							{dtrs.filter((x) => new Date(x.node.startDate) > new Date()).map(({ node }) => (
+								<div className={styles.dtr}>
+									<h3 className={styles.dtrTitle}>{node.date}</h3>
+									<div
+										dangerouslySetInnerHTML={{
+											__html: node.description.childMarkdownRemark.html
+										}}
+									/>
+									{node.extraInfo && <p className={styles.dtrExtra}>{node.extraInfo}</p>}
 								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
-					<div className="news-wrapper">
+
+					{/* <div className="news-wrapper">
 						<h2 className="section-headline">News</h2>
 						<div className="row">
 							{news.map(({ node }) => (
@@ -62,7 +84,7 @@ class RootIndex extends React.Component {
 								</article>
 							))}
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</Layout>
 		);
@@ -73,30 +95,43 @@ export default RootIndex;
 
 export const pageQuery = graphql`
 	query NewsEventsQuery {
-		allContentfulNews(sort: { fields: [title], order: ASC }) {
+		allContentfulEventsAndNews {
 			edges {
 				node {
 					title
-					teaserText
-					date
-				}
-			}
-		}
-		allContentfulEvent(sort: { fields: [dateTime], order: DESC }, limit: 1) {
-			edges {
-				node {
-					eventName
-					eventType
-					eventDetails
-					dateTime
-					maxAttendees
-					price
-					url
-					eventImage {
-						sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+					photos {
+						sizes(maxWidth: 400, maxHeight: 300, resizingBehavior: FILL) {
 							...GatsbyContentfulSizes_withWebp
 						}
 					}
+					featuredEvent {
+						eventName
+						dateTime
+						description {
+							childMarkdownRemark {
+								html
+							}
+						}
+						eventImage {
+							sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: FILL) {
+								...GatsbyContentfulSizes_withWebp
+							}
+						}
+					}
+				}
+			}
+		}
+		allContentfulDateToRemember(sort: { fields: [startDate], order: ASC }) {
+			edges {
+				node {
+					date
+					startDate
+					description {
+						childMarkdownRemark {
+							html
+						}
+					}
+					extraInfo
 				}
 			}
 		}
