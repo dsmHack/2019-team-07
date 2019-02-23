@@ -50,11 +50,12 @@
 
 .dtr {
 	flex: 1;
-	border: 1px solid #0055a4;
+	box-shadow: 0 1px 2px #0055a433;
 	padding: 1em;
 	margin-bottom: 1em;
 	max-width: 100%;
 	text-align: center;
+	background: #fff;
 }
 
 @media all and (min-width: 600px) {
