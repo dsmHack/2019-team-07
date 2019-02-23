@@ -80,14 +80,14 @@ export class AuthProvider extends Component {
 	login(cb) {
 		handleLogin(() => {
 			this.checkLogin();
-			cb();
+			setTimeout(cb, 10);
 		});
 	}
 
 	logout(cb) {
 		handleLogout(() => {
 			this.checkLogin();
-			cb();
+			setTimeout(cb, 10);
 		});
 	}
 

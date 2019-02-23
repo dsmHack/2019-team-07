@@ -90,9 +90,6 @@ export const pageQuery = graphql`
 					company
 					email
 					phone
-					facebook
-					twitter
-					id
 				}
 			}
 		}
