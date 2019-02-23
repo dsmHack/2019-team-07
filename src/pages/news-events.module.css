@@ -1,33 +1,26 @@
 .title {
 	font-size: 1.5em;
-	margin-bottom: 0.5em;
+	margin-bottom: 0;
 	margin-top: 0;
-}
-
-.meta {
-	display: flex;
+	text-align: center;
+	color: #0055a4;
 }
 
 .metaItem {
 	display: flex;
 	align-items: center;
-	background-color: #eeeef2;
-	border-radius: 0.25em;
-	color: #667;
-	width: fit-content;
-	padding: 0.25em 0.5em;
-	margin-right: 1em;
+	color: #20bf55;
 	margin-bottom: 0.5em;
+	justify-content: center;
 }
 
 .metaItem svg {
 	margin-right: 0.5em;
-	stroke: #aab;
 }
 
 .eventData {
 	flex: 1;
-	align-self: flex-start;
+	text-align: center;
 }
 
 .eventImage {
@@ -48,4 +41,46 @@
 	.article {
 		width: 30%;
 	}
+}
+
+.dtrRow {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dtr {
+	flex: 1;
+	box-shadow: 0 1px 2px #0055a433;
+	padding: 1em;
+	margin-bottom: 1em;
+	max-width: 100%;
+	text-align: center;
+	background: #fff;
+}
+
+@media all and (min-width: 600px) {
+	.dtr {
+		width: 45%;
+	}
+}
+
+@media all and (min-width: 900px) {
+	.dtr {
+		width: 30%;
+	}
+}
+
+.dtr:not(:last-child) {
+	margin-right: 1em;
+}
+
+.dtrTitle {
+	color: #0055a4;
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.dtrExtra {
+	color: #667;
 }

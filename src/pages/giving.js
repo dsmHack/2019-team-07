@@ -4,6 +4,8 @@ import Helmet from "react-helmet";
 import Layout from "../layouts";
 import { graphql } from "gatsby";
 import HeroImage from "../components/hero-image";
+import LinkButton from "../components/link-button";
+import styles from "./giving.module.css";
 
 class RootIndex extends React.Component {
 	render() {
@@ -30,6 +32,22 @@ class RootIndex extends React.Component {
 									__html: node.body.childMarkdownRemark.html
 								}}
 							/>
+							<div className="text-centered" style={{ margin: "2em 0 4em" }}>
+								<LinkButton to="contact-us/" value="Contact Us" />
+							</div>
+							<h2 className="section-headline text-centered">{node.philanthropicEventsTitle}</h2>
+							<div className="row" style={{ marginBottom: "2em" }}>
+								{node.philanthropicEvents.map((event) => (
+									<div className={styles.event}>
+										<h3 className={styles.eventTitle}>{event.title}</h3>
+										<div
+											dangerouslySetInnerHTML={{
+												__html: event.body.childMarkdownRemark.html
+											}}
+										/>
+									</div>
+								))}
+							</div>
 						</div>
 					))}
 				</div>
@@ -62,7 +80,21 @@ export const pageQuery = graphql`
 							...GatsbyContentfulSizes_withWebp
 						}
 					}
+					philanthropicEventsTitle
+					philanthropicEvents {
+						title
+						body {
+							childMarkdownRemark {
+								html
+							}
+						}
+					}
 				}
+			}
+		}
+		site {
+			siteMetadata {
+				title
 			}
 		}
 	}
