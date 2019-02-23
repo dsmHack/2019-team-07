@@ -10,12 +10,12 @@ import styles from "./giving.module.css";
 class RootIndex extends React.Component {
 	render() {
 		const siteTitle = get(this, "props.data.site.siteMetadata.title");
-		const giving = get(this, "props.data.allContentfulGrantsScholarships.edges");
+		const giving = get(this, "props.data.allContentfulGiving.edges");
 
 		return (
 			<Layout>
 				<div>
-					<Helmet title={`Grants & Scholarship - ${siteTitle}`} />
+					<Helmet title={`Giving - ${siteTitle}`} />
 					{giving.map(({ node }) => (
 						<div>
 							<HeroImage photos={node.photos} title={node.title} />
@@ -60,7 +60,7 @@ export default RootIndex;
 
 export const pageQuery = graphql`
 	query GivingQuery {
-		allContentfulGrantsScholarships {
+		allContentfulGiving {
 			edges {
 				node {
 					title
