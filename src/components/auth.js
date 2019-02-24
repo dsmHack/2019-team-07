@@ -2,7 +2,7 @@ import netlifyIdentity from "netlify-identity-widget";
 import React, { Component } from "react";
 
 // helpful for debugging netlify identity
-const logAuth = process.env.NODE_ENV === "development" && true; // set to true to turn on logging
+const logAuth = process.env.NODE_ENV === "development" && false; // set to true to turn on logging
 const clog = (...args) => logAuth && console.log(...args);
 // helpful for debugging netlify identity
 
@@ -26,7 +26,6 @@ const handleLogin = (callback) => {
 		netlifyIdentity.on("login", (user) => {
 			clog("logged in!", { user });
 			setUser(user);
-			console.log("blah blah");
 			callback(user);
 		});
 	}
@@ -60,10 +59,8 @@ initAuth();
 const defaultContext = {
 	isLoggedIn: isLoggedIn(),
 	login: () => {
-		console.log("default");
 	},
 	logout: () => {
-		console.log("default");
 	}
 };
 
@@ -92,11 +89,10 @@ export class AuthProvider extends Component {
 
 	componentDidMount() {
 		this.checkLogin();
-		console.log("provider mounted");
 	}
 
 	render() {
-		console.log("provider render", this.state.isLoggedIn);
+		clog("provider render", this.state.isLoggedIn);
 		return (
 			<AuthContext.Provider
 				value={{

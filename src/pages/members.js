@@ -13,7 +13,6 @@ export default class Members extends Component {
 	static contextType = AuthContext;
 
 	componentDidMount() {
-		console.log(this.context);
 		if (!this.context.isLoggedIn) {
 			navigate("/login/");
 		}

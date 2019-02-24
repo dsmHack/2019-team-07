@@ -32,7 +32,6 @@ export default class Navigation extends Component {
 	render() {
 		const context = this.context;
 		const show = this.state.show;
-		console.log(context);
 
 		return (
 			<StaticQuery
