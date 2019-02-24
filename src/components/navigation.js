@@ -60,7 +60,7 @@ export default class Navigation extends Component {
 										<img src="/logo.svg" alt="" />
 										<span>
 											<strong style={{ display: "block" }}>
-												Les Dames d'Escossier International
+												Les Dames d'Escoffier International
 											</strong>
 											Greater Des Moines Chapter
 										</span>
