@@ -26,7 +26,7 @@ export default () => (
 					<div className="container">
 						<div className="row row-center">
 							<div>
-								&copy; {new Date().getFullYear()} - Les Dames d'Escossier International · Greater Des
+								&copy; {new Date().getFullYear()} - Les Dames d'Escoffier International · Greater Des
 								Moines Chapter
 							</div>
 							<div className="row">
