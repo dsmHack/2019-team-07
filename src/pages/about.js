@@ -37,10 +37,18 @@ class RootIndex extends React.Component {
                 </div>
                 <div className={`row ${styles.row}`} style={{ marginBottom: "4em" }}>
                   <div className={`col ${styles.col} ${styles.pinwheel}`}>
-                    <img className={styles.landscape} src={node.aboutLandscapePhotos[0].sizes.src} alt="" />
-                    <img className={styles.portrait} src={node.aboutPortraitPhotos[0].sizes.src} alt="" />
-                    <img className={styles.portrait} src={node.aboutPortraitPhotos[1].sizes.src} alt="" />
-                    <img className={styles.landscape} src={node.aboutLandscapePhotos[1].sizes.src} alt="" />
+                    <div className={styles.landscape}>
+                      <img src={node.aboutLandscapePhotos[0].sizes.src} alt="" />
+                    </div>
+                    <div className={styles.portrait}>
+                      <img src={node.aboutPortraitPhotos[0].sizes.src} alt="" />
+                    </div>
+                    <div className={styles.portrait}>
+                      <img src={node.aboutPortraitPhotos[1].sizes.src} alt="" />
+                    </div>
+                    <div className={styles.landscape}>
+                      <img src={node.aboutLandscapePhotos[1].sizes.src} alt="" />
+                    </div>
                   </div>
                   <div className={`col ${styles.col} text-centered`}>
                     <h2 className="section-headline text-center">

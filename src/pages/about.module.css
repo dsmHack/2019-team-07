@@ -1,15 +1,21 @@
 .pinwheel {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 200px 200px;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
 }
 
-.pinwheel img {
+.pinwheel > div {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.pinwheel div img {
+  height: 100%;
   object-fit: cover;
-  min-height: 100%;
-  min-width: 100%;
+  object-position: center;
 }
 
 .pinwheel .landscape {
